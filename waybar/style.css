@@ -1,0 +1,118 @@
+@define-color bgcolor #11111b;
+@define-color bordercolor #181825;
+@define-color focused_bgcolor #45475a;
+@define-color focused_bordercolor #313244;
+
+* {
+    font-family: "Arimo Nerd Font"; 
+    font-size: 13px;
+    color: #cdd6f4;
+    min-height: 15px;
+}
+
+#waybar {
+    background: transparent;
+}
+
+#waybar.hidden {
+    opacity: 0.2;
+}
+
+#battery {
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: @bgcolor;
+    border-bottom: 3px solid @bordercolor;
+    border-top: 3px solid @bordercolor;
+    border-left: 3px solid @bordercolor;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#pulseaudio,
+#cpu,
+#backlight,
+#network {
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: @bgcolor;
+    border-bottom: 3px solid @bordercolor;
+    border-top: 3px solid @bordercolor;
+}
+
+#memory{
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: @bgcolor;
+    border-bottom: 3px solid @bordercolor;
+    border-top: 3px solid @bordercolor;
+    border-right: 3px solid @bordercolor;
+    border-top-right-radius: 10;
+    border-bottom-right-radius: 10;
+}
+
+#workspaces button{
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 0em 0.6em;
+    background-color: @bgcolor;
+    border: 3px solid @bordercolor;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    font-weight: 600;
+    background: transparent; 
+    border: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 0em 0.6em;
+    background-color: @focused_bgcolor;
+    border: 3px solid @focused_bordercolor;
+    border-radius: 10px;
+}
+
+#clock.time {
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: @bgcolor;
+    border-bottom: 3px solid @bordercolor;
+    border-top: 3px solid @bordercolor;
+    border-left: 3px solid @bordercolor;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#clock.date {
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: @bgcolor;
+    border-bottom: 3px solid @bordercolor;
+    border-top: 3px solid @bordercolor;
+    border-right: 3px solid @bordercolor;
+    border-top-right-radius: 10;
+    border-bottom-right-radius: 10;
+}
+
+#mode {
+    font-style: italic;
+    margin-top: 6px;
+    padding: 0em 0.6em;
+    background-color: #6c7086;
+    border: 3px solid #585b70;
+    border-radius: 10px;
+}
+
+tooltip {
+    background: rgba(49, 50, 68, 0.9);
+    border: 3px solid transparent;
+    border-radius: 10px;
+}

@@ -1,0 +1,80 @@
+// Waybar config
+// James Torres / thatguydoru
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "width": 1356,
+
+    "modules-left": [
+	"battery",
+	"network",
+	"pulseaudio",
+	"backlight",
+    	"cpu",
+	"memory",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+	"sway/mode",
+	"sway/workspaces",
+	"clock#time",
+	"clock#date",
+    ],
+
+    // Modules config
+    "clock#time": {
+	"format": " {:%H:%M}",
+	"tooltip": false,
+	//"tooltip-format": " {:%d/%m/%Y}"
+    },
+    "clock#date": {
+	"format": " {:%a %b %d, %Y }",
+    },
+    "backlight": {
+	"format": "{icon} {percent}%",
+	"format-icons": ["", "", ""],
+    },
+    "pulseaudio": {
+	"format": "{icon} {volume}%",
+	"format-muted": "",
+	"format-icons": {
+	    //"headphone": "",
+	    "default": ["", ""],
+	},
+    },
+    "battery": {
+	"states": {
+	    "warning": 30,
+	    "critical": 15,
+	},
+	"format": "{icon}  {capacity}%",
+	"format-charging": "{capacity}% ﮣ",
+	"format-plugged": "{capacity}% ﮣ",
+	"format-icons": ["", "", "", "", ""],
+	"tooltip": true,
+	"tooltip-format-discharging": "{time}",
+	"tooltip-format-plugged": "{timeTo}",
+	"tooltip-format-charging": "{timeTo}"
+    },
+    "network": {
+	"format-wifi": "直 ok",
+	"tooltip-format-wifi": "{essid} ({signalStrength}% {bandwidthDownBits} {bandwidthUpBits})",
+	"format-ethernet": " ok",
+	"tooltip-format-ethernet": "{ipaddr}/{cidr}",
+	"format-disconnected": " 睊dc",
+	"format-linked": " ok?",
+	"tooltip-format-linked": "{ifname} (No IP)",
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    }
+}
