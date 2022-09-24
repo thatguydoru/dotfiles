@@ -235,6 +235,16 @@ bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 #}
 bar swaybar_command waybar
 
+# GTK Theming:
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Lavender-Cursors'
+    gsettings set $gnome-schema font-name 'Liberation 10'
+}
+
 #
 # Styling:
 #
