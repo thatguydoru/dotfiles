@@ -1,0 +1,109 @@
+@import "/home/jtorres/.config/waybar/catpuccin/waybar/themes/mocha.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Hack; 
+    font-size: 11px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+    border-bottom: 2px solid @crust;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @text;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each workspace name */
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    border-top: 2px solid @text;
+    /*box-shadow: inset 0 -3px @text;*/
+}
+
+#workspaces button.focused {
+    background-color: transparent;
+    color: @text;
+    border-top: 2px solid @text;
+    /*box-shadow: inset 0 -3px @text;*/
+}
+
+#workspaces button.urgent {
+    background-color: transparent;
+    color: @maroon;
+}
+
+#mode {
+    background-color: @overlay0;
+    border-top: 2px solid @text;
+    color: @text;
+}
+
+#clock,
+#battery,
+#network,
+#mode {
+    padding: 0 5px;
+    color: @text;
+}
+
+#clock {
+    background-color: transparent;
+}
+
+#battery {
+    background-color: transparent;
+    color: @text;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: @text;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: transparent;
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    background-color: transparent;
+    color: @blue;
+}
+
+#network.disconnected {
+    background-color: transparent;
+    color: @text;
+}
+
