@@ -20,7 +20,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0 0px;
+    padding: 2px 0;
     background-color: transparent;
     color: @text;
     /* Use box-shadow instead of border so the text isn't offset */
@@ -38,9 +38,9 @@ window#waybar.hidden {
 
 #workspaces button.focused {
     background-color: transparent;
-    color: @text;
+    color: @lavender;
     /*border-top: 2px solid @text;*/
-    box-shadow: inset 0 -3px @text;
+    box-shadow: inset 0 -3px @lavender;
 }
 
 #workspaces button.urgent {
