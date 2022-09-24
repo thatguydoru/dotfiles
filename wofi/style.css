@@ -1,0 +1,57 @@
+@import "/home/jtorres/.config/wofi/catppuccin/mocha.css";
+
+* {
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#window {
+    background-color: @overlay0;
+}
+
+#input {
+    /*margin: 5px;*/
+    border-radius: 0px;
+    border-bottom: 2px solid @lavender;
+    background-color: transparent;
+    color: @text;
+}
+
+#inner-box {
+    background-color: transparent;
+    border: 0px;
+}
+
+#outer-box {
+    margin: 2px;
+    padding: 10px;
+    background-color: @surface0;
+}
+
+#scroll {
+    /*margin: 5px;*/
+}
+
+#text {
+    padding: 4px;
+    color: @text;
+}
+
+#entry {
+    border-radius: 0px;
+    border: none
+}
+
+#entry:nth-child(even){
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: @overlay0;
+}
+
+#text:selected {
+    background: transparent;
+    border-radius: 0px;
+}

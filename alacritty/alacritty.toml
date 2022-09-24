@@ -1,0 +1,32 @@
+import = ["/home/jtorres/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "Iosevka Fixed"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka Fixed"
+style = "Bold Italic"
+
+[font.italic]
+family = "Iosevka Fixed"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Fixed"
+style = "Regular"
+
+[window]
+decorations = "None"
+dynamic_title = false
+startup_mode = "Windowed"
+dynamic_padding = true
+
+[mouse]
+hide_when_typing = true

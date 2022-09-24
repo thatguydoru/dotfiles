@@ -1,0 +1,110 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 4,
+    "modules-left": [ "sway/workspaces", "sway/scratchpad", "sway/mode" ],
+    "modules-center": ["sway/window"],
+    "modules-right": [
+        "tray",
+		"clock",
+        "network",
+        "backlight",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "battery",
+        "custom/power-button"
+    ],
+    "custom/separator": {
+        "format": "",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": true,
+        "on-click": "wezterm -e btop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "wezterm -e btop",
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "custom/drun": {
+        "format": "<span size=\"10pt\"></span>",
+        "tooltip": false,
+        "on-click": "wofi --conf=$HOME/.config/wofi/launch"
+    },
+    "custom/power-button": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "swaynag -t warning -m 'Shutdown?' -B 'Yes' 'systemctl poweroff'"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 50,
+        "tooltip": true
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈁",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-linked": "{ifname} (No IP) 󰈁",
+        "format-disconnected": "",
+        "format-alt": "{essid} {signalStrength}% "
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󱐋",
+        "format-plugged": "{capacity}% ",
+        // "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "{time}",
+        "tooltip-format-discharging": "{capacity}% | {time}"
+    },
+    "clock": {
+        "format": "{:%H:%M} ",
+        "format-alt": "{:%a %Y-%m-%d} ",
+        "tooltip": true,
+        "tooltip-format": "{:%a %Y-%m-%d} "
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "{volume}% | {desc}"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 6,
+    }
+}

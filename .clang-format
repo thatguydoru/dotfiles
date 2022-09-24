@@ -1,0 +1,9 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+PointerAlignment: Left
+AlignAfterOpenBracket: BlockIndent
+AlignEscapedNewlines: Left
+IndentCaseLabels: true
+ColumnLimit: 80
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty

@@ -1,0 +1,17 @@
+default-timeout=5000
+ignore-timeout=1
+font=Hack 9
+width=300
+height=110
+icons=0
+max-icon-size=64
+
+# Colors
+
+background-color=#313244
+text-color=#cdd6f4
+border-color=#585b70
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387

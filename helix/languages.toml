@@ -1,0 +1,34 @@
+[[language]]
+name = "html"
+auto-format = false
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+
+[language-server.pylsp.config.pylsp]
+plugins.black.enabled = true
+
+[language-server.pylsp.config.pylsp.plugins.ruff]
+enabled = true
+formatEnabled = true
+extendSelect = ["I"]
+extendIgnore = ["C90"]
+format = ["I"]
+severities = { D212 = "I" }
+unsafeFixes = false
+lineLength = 88
+exclude = ["__about__.py"]
+select = ["F"]
+ignore = ["D210"]
+perFileIgnores = { __init__.py = "CPY001" }
+preview = false
+targetVersion = "py310"

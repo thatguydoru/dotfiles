@@ -1,0 +1,25 @@
+image=~/.config/sway/wallpapers/Cloudsnight.jpg
+ignore-empty-password
+font=Hack Nerd Font
+font-size=10
+indicator-radius=35
+scaling=fit
+indicator-y-position=700
+indicator-x-position=1280
+line-uses-inside
+inside-color=1e1e2e
+inside-clear-color=1e1e2e
+inside-caps-lock-color=1e1e2e
+inside-ver-color=1e1e2e
+inside-wrong-color=1e1e2e
+ring-color=313244
+ring-clear-color=313244
+ring-caps-lock-color=313244
+ring-ver-color=313244
+ring-wrong-color=313244
+key-hl-color=a6e3a1
+text-color=cdd6f4
+text-clear-color=cdd6f4
+text-caps-lock-color=fab387
+text-ver-color=cdd6f4
+text-wrong-color=f38ba8
