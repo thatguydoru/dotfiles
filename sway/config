@@ -235,7 +235,7 @@ bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 #}
 bar swaybar_command waybar
 
-# GTK Theming:
+# Theming:
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
@@ -245,8 +245,10 @@ exec_always {
     gsettings set $gnome-schema font-name 'Liberation 10'
 }
 
+seat seat0 xcursor_theme Catppuccin-Mocha-Lavender-Cursors 24
+
 #
-# Styling:
+# Border:
 #
 default_border pixel 2
 default_floating_border pixel 2
