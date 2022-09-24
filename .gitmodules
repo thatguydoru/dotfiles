@@ -1,15 +1,6 @@
 [submodule "alacritty/catppuccin"]
 	path = alacritty/catppuccin
 	url = https://github.com/catppuccin/alacritty.git
-[submodule "btop/btop"]
-	path = btop/btop
-	url = https://github.com/catppuccin/btop.git
-[submodule "waybar/catppuccin/wayabr"]
-	path = waybar/catppuccin/wayabr
-	url = https://github.com/catppuccin/waybar.git
-[submodule "waybar/waybar/catppuccin/waybar"]
-	path = waybar/waybar/catppuccin/waybar
-	url = https://github.com/catppuccin/waybar.git
 [submodule "waybar/catppuccin/waybar"]
 	path = waybar/catppuccin/waybar
 	url = https://github.com/catppuccin/waybar.git
