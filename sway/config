@@ -13,21 +13,23 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show=drun --lines=10 --width=20% --location=3 -I
+#swaylock
+set $lock swaylock -f 
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * {
-    bg ~/.config/sway/top-kazimierz.jpg fill
+    bg ~/.config/sway/wallpapers/top-kazimierz.jpg fill
     resolution 1366x768@60Hz position 1366,0
 }
 
 ### Idle configuration
 #
 exec swayidle -w \
-     timeout 300 'swaylock -f -c 000000' \
+     timeout 300 '$lock' \
      timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep 'swaylock -f -c 000000'
+     before-sleep '$lock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -195,6 +197,9 @@ bindsym --locked XF86AudioLowerVolume exec amixer -D pipewire sset Master 2%-
 bindsym --locked XF86AudioRaiseVolume exec amixer -D pipewire sset Master 2%+
 bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 
+# Lock session 
+bindsym Alt+l exec $lock
+
 #
 # Status Bar:
 #
@@ -236,7 +241,7 @@ client.unfocused         $unfocused $unfocused #ffffff $unfocused
 # Custom app window:
 #
 for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
-for_window [app_id="Thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
+for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 
 
