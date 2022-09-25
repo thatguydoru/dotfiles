@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -23,23 +17,17 @@ set $menu wofi --show=drun --lines=10 --width=20% --location=3 -I
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/sway/top-kazimierz.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-output * resolution 1366x768@60Hz position 1366,0
+output * {
+    bg ~/.config/sway/top-kazimierz.jpg fill
+    resolution 1366x768@60Hz position 1366,0
+}
 
 ### Idle configuration
 #
-# Example configuration:
-
- exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+     timeout 300 'swaylock -f -c 000000' \
+     timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     before-sleep 'swaylock -f -c 000000'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -47,23 +35,14 @@ output * resolution 1366x768@60Hz position 1366,0
 
 ### Input configuration
 #
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 input "type:touchpad" {
     dwt enabled
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
 }
+
+input "type:keyboard" repeat_delay 290
 
 ### Key bindings
 #
@@ -219,23 +198,12 @@ bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position top
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
 bar swaybar_command waybar
 
+### More custom stuff
+#
 # Theming:
+#
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
@@ -257,12 +225,19 @@ smart_gaps on
 gaps inner 5
 
 set $focused #b4befe
-set $unfocused #1e1e2e
+set $unfocused #7f849c
 #class	                 border	    background text    [<indicator> [<child_border>]]
 client.focused           $focused   $focused   #ffffff $focused
 client.focused_inactive  $unfocused $unfocused #ffffff $unfocused
 client.focused_tab_title $unfocused $unfocused #ffffff $unfocused
 client.unfocused         $unfocused $unfocused #ffffff $unfocused
+
+#
+# Custom app window:
+#
+for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
+for_window [app_id="Thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 
 
 include /etc/sway/config.d/*
