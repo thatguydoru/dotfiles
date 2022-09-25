@@ -1,11 +1,19 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "spacing": 2,
+    "modules-left": ["custom/separator-backward", "sway/workspaces", "sway/mode", "custom/separator-backward"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "battery", "clock"],
+    "modules-right": ["custom/separator-forward", "network", "custom/separator-forward", "battery", "custom/separator-forward","clock", "custom/separator-forward"],
 
+    "custom/separator-forward": {
+	"format": "/",
+	"tooltip": false
+    },
+    "custom/separator-backward": {
+	"format": "\\",
+	"tooltip": false,
+    },
     "sway/workspaces": {
         "disable-scroll": true,
     },
