@@ -234,7 +234,7 @@ set $unfocused #7f849c
 #class	                 border	    background text    [<indicator> [<child_border>]]
 client.focused           $focused   $focused   #ffffff $focused
 client.focused_inactive  $unfocused $unfocused #ffffff $unfocused
-client.focused_tab_title $unfocused $unfocused #ffffff $unfocused
+client.focused_tab_title $unfocused $unfocused #ffffff 
 client.unfocused         $unfocused $unfocused #ffffff $unfocused
 
 #
@@ -244,5 +244,6 @@ for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
 for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 for_window [app_id="firefox" title="Library"] floating enable
+
 
 include /etc/sway/config.d/*
