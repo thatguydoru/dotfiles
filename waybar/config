@@ -21,7 +21,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-	"tooltip": false,
+	"max-length": 50,
+	"tooltip": true,
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
