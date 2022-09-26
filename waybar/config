@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "spacing": 2,
-    "modules-left": ["custom/separator-backward", "sway/workspaces", "sway/mode", "custom/separator-backward"],
+    "modules-left": ["custom/separator-backward", "sway/workspaces", "custom/separator-backward", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": ["custom/separator-forward", "network", "custom/separator-forward", "battery", "custom/separator-forward","clock", "custom/separator-forward"],
 
