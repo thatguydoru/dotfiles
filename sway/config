@@ -28,7 +28,7 @@ output * {
 #
 exec swayidle -w \
      timeout 300 '$lock' \
-     timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     timeout 500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
      before-sleep '$lock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -238,7 +238,7 @@ client.focused_tab_title $unfocused $unfocused #ffffff
 client.unfocused         $unfocused $unfocused #ffffff $unfocused
 
 #
-# Custom app window:
+# Float apps:
 #
 for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
 for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
