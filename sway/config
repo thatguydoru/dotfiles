@@ -244,6 +244,7 @@ for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
 for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 for_window [app_id="firefox" title="Library"] floating enable
+for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 755 px 430 px
 
 
 include /etc/sway/config.d/*
