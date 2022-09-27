@@ -4,7 +4,19 @@
     "spacing": 2,
     "modules-left": ["custom/separator-backward", "sway/workspaces", "custom/separator-backward", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/separator-forward", "network", "custom/separator-forward", "battery", "custom/separator-forward","clock", "custom/separator-forward"],
+    "modules-right": [
+    	"custom/separator-forward", 
+    	"network", 
+	"custom/separator-forward", 
+    	"backlight", 
+	"custom/separator-forward", 
+    	"pulseaudio", 
+	"custom/separator-forward", 
+	"battery", 
+	"custom/separator-forward",
+	"clock", 
+	"custom/separator-forward"
+    ],
 
     "custom/separator-forward": {
 	"format": "/",
@@ -51,7 +63,20 @@
     },
     "clock": {
 	"format": "{:%H:%M} ",
-        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%a %Y-%m-%d} "
     },
+    "pulseaudio": {
+	"format": "{volume}% {icon}",
+	"format-muted": "",
+	"format-icons": {
+        "headphone": "",
+        "default": ["", ""]
+	},
+	"on-click": "alacritty -e alsamixer"
+    },
+    "backlight": {
+	"device": "intel_backlight",
+	"format": "{percent}% {icon}",
+	"format-icons": ["", ""]
+    }
 }
