@@ -235,11 +235,13 @@ gaps inner 5
 
 set $focused #b4befe
 set $unfocused #7f849c
+set $red #f38ba8
 #class	                 border	    background text    [<indicator> [<child_border>]]
 client.focused           $focused   $focused   #ffffff $focused
 client.focused_inactive  $unfocused $unfocused #ffffff $unfocused
 client.focused_tab_title $unfocused $unfocused #ffffff 
 client.unfocused         $unfocused $unfocused #ffffff $unfocused
+client.urgent 		 $red       $red       #ffffff $red
 
 #
 # Float apps:

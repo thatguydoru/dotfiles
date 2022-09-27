@@ -3,3 +3,4 @@ allow_images=true
 lines=10
 width=20%
 location=3
+insensitive=true
