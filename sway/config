@@ -209,7 +209,7 @@ bar swaybar_command waybar
 # Daemons 
 #
 #exec_always /usr/lib/polkit-kde-authentication-agent-1
-#exec_always mako
+exec_always mako
 
 ### More custom stuff
 #
