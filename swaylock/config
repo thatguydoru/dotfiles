@@ -1,1 +1,4 @@
 image=~/.config/sway/wallpapers/rosmontis-arknights.jpg
+font=Hack
+font-size=10
+indicator-radius=35
