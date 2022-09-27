@@ -51,7 +51,7 @@ window#waybar.hidden {
 
 #workspaces button.urgent {
     background-color: transparent;
-    color: @maroon;
+    color: @peach;
 }
 
 #mode {
@@ -76,11 +76,10 @@ window#waybar.hidden {
 
 #battery {
     background-color: transparent;
-    color: @text;
 }
 
 #battery.charging, #battery.plugged {
-    color: @green;
+    color: @text;
     background-color: transparent;
 }
 
@@ -107,17 +106,16 @@ label:focus {
 
 #network {
     background-color: transparent;
-    color: @blue;
 }
 
 #network.disconnected {
     background-color: transparent;
-    color: @text;
+    color: @red;
 }
 
 #custom-separator-backward,
 #custom-separator-forward {
     background-color: transparent;
-    color: @lavender;
+    color: @surface2;
     font-size: 15;
 }
