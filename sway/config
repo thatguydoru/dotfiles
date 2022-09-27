@@ -200,14 +200,16 @@ bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 # Lock session 
 bindsym Alt+l exec $lock
 
-# App shortcuts
-bindsym $mod+i exec alacritty -e nvim
-bindsym $mod+o exec firefox
-
 #
 # Status Bar:
 #
 bar swaybar_command waybar
+
+#
+# Daemons 
+#
+#exec_always /usr/lib/polkit-kde-authentication-agent-1
+#exec_always mako
 
 ### More custom stuff
 #
@@ -253,7 +255,5 @@ for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px
 for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
 
-# Polkit
-exec /usr/lib/polkit-kde-authentication-agent-1 
 
 include /etc/sway/config.d/*
