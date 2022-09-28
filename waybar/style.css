@@ -70,23 +70,35 @@ window#waybar.hidden {
     color: @text;
 }
 
+#pulseaudio {
+    background-color: transparent;
+    color: @sapphire;
+}
+
+#backlight {
+    background-color: transparent;
+    color: @sky;
+}
+
 #clock {
     background-color: transparent;
+    color: @lavender;
 }
 
 #battery {
     background-color: transparent;
+    color: @blue;
 }
 
 #battery.charging, #battery.plugged {
-    color: @text;
     background-color: transparent;
+    color: @blue;
 }
 
 @keyframes blink {
     to {
         background-color: transparent;
-        color: @text;
+        color: @blue;
     }
 }
 
@@ -106,6 +118,7 @@ label:focus {
 
 #network {
     background-color: transparent;
+    color: @teal;
 }
 
 #network.disconnected {
