@@ -213,8 +213,8 @@ bar swaybar_command waybar
 #
 # Daemons 
 #
-#exec_always /usr/lib/polkit-kde-authentication-agent-1
 exec_always mako
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ### More custom stuff
 #
@@ -257,11 +257,10 @@ client.urgent 		 $red       $red       $base $red
 # Float apps:
 #
 for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px, border pixel 2
-#for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px
-#for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
+for_window [app_id="polkit-gnome-authentication-agent-1"] floating enable
 
 
 include /etc/sway/config.d/*
