@@ -197,6 +197,11 @@ bindsym --locked XF86AudioLowerVolume exec amixer -D pipewire sset Master 2%-
 bindsym --locked XF86AudioRaiseVolume exec amixer -D pipewire sset Master 2%+
 bindsym --locked XF86AudioMicMute exec amixer -D pipewire sset Capture toggle
 
+# Screenshot binds
+set $format $(xdg-user-dir SCREENSHOTS)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
+bindsym --locked Print exec grim -o eDP-1 $format
+bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $format
+
 # Lock session 
 bindsym Alt+l exec $lock
 
@@ -234,26 +239,29 @@ default_floating_border pixel 2
 smart_borders on
 smart_gaps on
 gaps inner 5
+font Hack 9
 
-set $focused #b4befe
-set $unfocused #7f849c
+set $lavender #b4befe
+set $overlay1 #7f849c
+set $surface1 #45475a
 set $red #f38ba8
+set $base #1e1e2e
+set $text #cdd6f4
 #class	                 border	    background text    [<indicator> [<child_border>]]
-client.focused           $focused   $focused   #ffffff $focused
-client.focused_inactive  $unfocused $unfocused #ffffff $unfocused
-client.focused_tab_title $unfocused $unfocused #ffffff 
-client.unfocused         $unfocused $unfocused #ffffff $unfocused
-client.urgent 		 $red       $red       #ffffff $red
+client.focused           $lavender  $lavender  $base $lavender
+client.focused_inactive  $overlay1  $overlay1  $base $overlay1
+client.unfocused         $overlay1  $overlay1  $text $overlay1
+client.urgent 		 $red       $red       $base $red
 
 #
 # Float apps:
 #
-for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px
-for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
+for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px, border pixel 2
+#for_window [app_id="thunar"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 600 px height 300px, move position 755 px 430 px
 for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px
-for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
+#for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
 
 
 include /etc/sway/config.d/*
