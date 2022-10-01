@@ -60,7 +60,8 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
 	"tooltip": true,
-	"tooltip-format": "{time}" 
+	"tooltip-format": "{time}", 
+	"on-click": "alacritty -e btop"
     },
     "clock": {
 	"format": "{:%H:%M} ",
