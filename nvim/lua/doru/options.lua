@@ -1,0 +1,43 @@
+-- Neovim Options --
+
+local opts = {
+    -- indent and wrap
+    shiftwidth = 4,
+    expandtab = true,
+    tabstop = 4,
+    smartindent = true,
+    wrap = false,
+    whichwrap = '<,>,[,],h,l',
+    --search
+    incsearch = true,
+    hlsearch = false,
+    ignorecase = true,
+    smartcase = true,
+    -- column
+    number = true,
+    relativenumber = true,
+    numberwidth = 2,
+    -- backup
+    swapfile = false,
+    backup = false,
+    writebackup = false,
+    -- cursor and scroll
+    cursorline = true,
+    scrolloff = 10,
+    sidescrolloff = 10,
+    -- splits
+    splitbelow = true,
+    splitright = true,
+    -- misc
+    termguicolors = true,
+    updatetime = 100,
+    fileencoding = 'utf-8',
+    cmdheight = 1,
+    clipboard = 'unnamedplus',
+    showcmd = false,
+    showmode = false,
+}
+
+for k, v in pairs(opts) do
+    vim.o[k] = v
+end

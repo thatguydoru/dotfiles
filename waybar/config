@@ -1,21 +1,17 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 2,
+    "spacing": 4,
     "modules-left": ["custom/separator-backward", "sway/workspaces", "custom/separator-backward", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
     	"custom/separator-forward", 
     	"network", 
-	"custom/separator-forward", 
     	"backlight", 
-	"custom/separator-forward", 
     	"pulseaudio", 
-	"custom/separator-forward", 
-	"battery", 
-	"custom/separator-forward",
-	"clock", 
-	"custom/separator-forward"
+        "battery", 
+        "clock", 
+        "custom/separator-forward"
     ],
 
     "custom/separator-forward": {
@@ -52,33 +48,35 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         // "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
-	"tooltip": true,
-	"tooltip-format": "{time}", 
-	"on-click": "alacritty -e btop"
+        "tooltip": true,
+        "tooltip-format": "{time}", 
+        "on-click": "alacritty -e btop",
+        "tooltip-format-discharging": "{capacity}% | {time}",
     },
     "clock": {
-	"format": "{:%H:%M} ",
-        "format-alt": "{:%a %Y-%m-%d} "
+        "format": "{:%H:%M} ",
+            "format-alt": "{:%a %Y-%m-%d} "
     },
     "pulseaudio": {
-	"format": "{volume}% {icon}",
-	"format-muted": "",
-	"format-icons": {
-        "headphone": "",
-        "default": ["", ""]
-	},
-	"on-click": "alacritty -e alsamixer"
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "on-click": "alacritty -e alsamixer",
+        "tooltip-format": "{volume}% | {desc}"
     },
     "backlight": {
-	"device": "intel_backlight",
-	"format": "{percent}% {icon}",
-	"format-icons": ["", ""]
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", ""],
     }
 }
