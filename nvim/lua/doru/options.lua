@@ -17,14 +17,15 @@ local opts = {
     number = true,
     relativenumber = true,
     numberwidth = 2,
+    signcolumn = 'yes',
     -- backup
     swapfile = false,
     backup = false,
     writebackup = false,
     -- cursor and scroll
     cursorline = true,
-    scrolloff = 10,
-    sidescrolloff = 10,
+    scrolloff = 8,
+    sidescrolloff = 8,
     -- splits
     splitbelow = true,
     splitright = true,
@@ -36,6 +37,7 @@ local opts = {
     clipboard = 'unnamedplus',
     showcmd = false,
     showmode = false,
+    laststatus = 3
 }
 
 for k, v in pairs(opts) do

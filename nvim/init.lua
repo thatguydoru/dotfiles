@@ -1,4 +1,6 @@
 require('doru.options')
 require('doru.keymaps')
+require('doru.plugins')
 require('doru.theme')
-require('doru.statsbar')
+require('doru.lualine')
+require('doru.nvim-tree')
