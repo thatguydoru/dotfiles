@@ -1,6 +1,21 @@
-local opts = { noremap = true, silent = true }
+require("telescope").setup {
+    pickers = {
+        find_files = {
+            theme = "dropdown"
+        },
+        live_grep = {
+            theme = "dropdown"
+        },
+        buffers = {
+            theme = "dropdown"
+        },
+        help_tags = {
+            theme = "dropdown"
+        },
+    }
+}
 
--- Shorten
+local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 local builtin = require("telescope.builtin")
 
