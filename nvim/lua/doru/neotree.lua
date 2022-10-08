@@ -19,6 +19,6 @@ require('neo-tree').setup({
             handler = function(file_path)
                 require("neo-tree").close_all()
             end
-        }
+        },
     }
 })
