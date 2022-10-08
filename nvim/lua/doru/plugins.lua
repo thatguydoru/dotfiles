@@ -36,10 +36,17 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use {'catppuccin/nvim', as = 'catppuccin'}
+    use { 'catppuccin/nvim', as = 'catppuccin' }
     use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-lua/plenary.nvim'
     use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-tree.lua'
+    use { 
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v2.x',
+        requires = { "MunifTanjim/nui.nvim" }
+    }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     if packer_bootstrap then
         require('packer').sync()
     end
