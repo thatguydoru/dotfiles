@@ -261,6 +261,7 @@ for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky
 for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px
 for_window [app_id="polkit-gnome-authentication-agent-1"] floating enable
+for_window [instance="pcmanfm"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 
 
 include /etc/sway/config.d/*

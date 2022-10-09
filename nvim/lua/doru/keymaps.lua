@@ -33,7 +33,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Toggle nvim-tree
-keymap("n", "<leader>e", ":NeoTreeFocusToggle<CR>", opts)
+--keymap("n", "<leader>e", ":NeoTreeFocusToggle<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
