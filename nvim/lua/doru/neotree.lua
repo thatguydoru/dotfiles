@@ -5,7 +5,7 @@ require('neo-tree').setup({
                 ["<F5>"] = "refresh",
                 ["o"] = "open",
             },
-            width = "20%",
+            width = 30,
         },
     },
     default_component_configs = {

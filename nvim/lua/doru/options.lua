@@ -7,8 +7,8 @@ local opts = {
     tabstop = 4,
     smartindent = true,
     wrap = false,
-    whichwrap = '<,>,[,],h,l',
-    --search
+    --whichwrap = '<,>,[,],h,l',
+    -- search
     incsearch = true,
     hlsearch = false,
     ignorecase = true,
