@@ -55,7 +55,14 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'neovim/nvim-lspconfig'
-    --use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'onsails/lspkind.nvim'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'williamboman/mason.nvim'
+    use {
+	    "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     if packer_bootstrap then
         require('packer').sync()
     end

@@ -4,6 +4,7 @@ require("catppuccin").setup({
         neotree = true,
         telescope = true,
         cmp = true,
+        treesitter = true,
     }
 })
 vim.api.nvim_command "colorscheme catppuccin"

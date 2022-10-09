@@ -16,7 +16,7 @@ local opts = {
     -- column
     number = true,
     relativenumber = true,
-    numberwidth = 2,
+    numberwidth = 4,
     signcolumn = 'yes',
     -- backup
     swapfile = false,
