@@ -37,6 +37,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use { 'catppuccin/nvim', as = 'catppuccin' }
+    use "lukas-reineke/indent-blankline.nvim"
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lualine/lualine.nvim'
