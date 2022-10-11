@@ -8,7 +8,7 @@ local lspconfig = require('lspconfig')
 local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'gopls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-        on_attach = on_attach,
+        -- on_attach = on_attach,
         capabilities = capabilities,
     }
 end

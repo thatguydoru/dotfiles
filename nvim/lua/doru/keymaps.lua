@@ -4,7 +4,7 @@
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -33,11 +33,14 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Toggle nvim-tree
---keymap("n", "<leader>e", ":NeoTreeFocusToggle<CR>", opts)
+keymap("n", "<leader>e", ":NeoTreeFocusToggle<CR>", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
+-- LSP Diagnostic
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<leader>r', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 -- Visual --
 -- Stay in indent mode

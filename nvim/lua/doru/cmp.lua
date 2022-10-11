@@ -38,7 +38,7 @@ cmp.setup({
         entries = "custom",
     },
     experimental = {
-        ghost_text = false 
+        ghost_text = true 
     },
     formatting = {
         format = lspkind.cmp_format({

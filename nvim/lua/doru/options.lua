@@ -37,7 +37,8 @@ local opts = {
     clipboard = 'unnamedplus',
     showcmd = false,
     showmode = false,
-    laststatus = 3
+    laststatus = 3,
+    hidden = true
 }
 
 for k, v in pairs(opts) do
