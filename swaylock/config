@@ -1,6 +1,6 @@
-image=~/.config/sway/wallpapers/rosmontis-arknights.jpg
+image=~/.config/sway/wallpapers/Cloudsnight.jpg
 ignore-empty-password
-font=Hack
+font=Hack Nerd Font
 font-size=10
 indicator-radius=35
 scaling=fit

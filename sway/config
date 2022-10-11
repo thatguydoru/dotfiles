@@ -20,15 +20,15 @@ set $lock swaylock -f
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * {
-    bg ~/.config/sway/wallpapers/top-kazimierz.jpg fill
+    bg ~/.config/sway/wallpapers/Cloudsnight.jpg fill
     resolution 1366x768@60Hz position 1366,0
 }
 
 ### Idle configuration
 #
 exec swayidle -w \
-     timeout 300 '$lock' \
-     timeout 400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     timeout 400 '$lock' \
+     timeout 370 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
      before-sleep '$lock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -203,7 +203,8 @@ bindsym --locked Print exec grim -o eDP-1 $format
 bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $format
 
 # Lock session 
-bindsym Alt+l exec $lock
+set $lockman bash ~/.config/sway/lockman.sh
+bindsym Alt+Shift+l exec $lockman
 
 #
 # Status Bar:
