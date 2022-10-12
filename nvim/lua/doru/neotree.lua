@@ -5,13 +5,13 @@ require('neo-tree').setup({
                 ["<F5>"] = "refresh",
                 ["o"] = "open",
             },
-            width = 30,
+            width = 35,
         },
     },
     default_component_configs = {
         icon = {
             folder_empty = ""
-        }
+        },
     },
     event_handlers = {
         {
