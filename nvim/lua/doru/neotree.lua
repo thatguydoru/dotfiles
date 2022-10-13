@@ -1,6 +1,6 @@
 require('neo-tree').setup({
     filesystem = {
-        hijack_netrw_behavior = "open_current",
+        hijack_netrw_behavior = "open_default",
         window = {
             mappings = {
                 ["<F5>"] = "refresh",
