@@ -33,12 +33,12 @@ local opts = {
     termguicolors = true,
     updatetime = 100,
     fileencoding = 'utf-8',
-    cmdheight = 1,
+    cmdheight = 0,
     clipboard = 'unnamedplus',
     showcmd = false,
     showmode = false,
     laststatus = 3,
-    hidden = true
+    hidden = true,
 }
 
 for k, v in pairs(opts) do
