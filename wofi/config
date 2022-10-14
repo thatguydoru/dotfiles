@@ -1,6 +1,7 @@
 show=drun
 allow_images=true
-lines=10
+lines=18
+#height=100%
 width=20%
 y=-2
 location=1
