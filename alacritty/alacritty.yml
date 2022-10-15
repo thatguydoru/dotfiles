@@ -30,4 +30,5 @@ font:
   size: 10.0
 
 cursor:
-  style: Block
+  style: 
+    style: Block
