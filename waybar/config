@@ -71,7 +71,7 @@
             "headphone": "",
             "default": ["", ""]
         },
-        "on-click": "alacritty -e alsamixer",
+        "on-click": "pavucontrol",
         "tooltip-format": "{volume}% | {desc}"
     },
     "backlight": {
