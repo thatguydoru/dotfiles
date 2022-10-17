@@ -44,7 +44,7 @@ input "type:touchpad" {
     middle_emulation enabled
 }
 
-input "type:keyboard" repeat_delay 290
+input "type:keyboard" repeat_delay 300
 
 ### Key bindings
 #
