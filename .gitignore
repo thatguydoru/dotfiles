@@ -22,6 +22,7 @@ pcmanfm-qt
 pavucontrol.ini
 htop
 btop
+btop/btop.log
 libreoffice
 procps
 gtk-3.0
