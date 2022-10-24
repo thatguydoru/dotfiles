@@ -7,7 +7,7 @@ require "catppuccin".setup {
         treesitter = true,
         indent_blankline = {
             enabled = true,
-            colore_indent_levels = true,
+            colored_indent_levels = true,
         },
         native_lsp = {
             enabled = true,
