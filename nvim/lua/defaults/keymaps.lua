@@ -42,6 +42,5 @@ keymap("n", "<leader>s", builtin.diagnostics, opts)
 keymap("n", "<leader>d", builtin.builtin, opts)
 
 -- LSP Diagnostics
-keymap("n", "[d", vim.diagnostic.goto_prev, opts)
-keymap("n", "]d", vim.diagnostic.goto_next, opts)
-keymap("n", "<leader>p", vim.diagnostic.setloclist, opts)
+keymap("n", "[p", vim.diagnostic.goto_prev, opts)
+keymap("n", "]p", vim.diagnostic.goto_next, opts)

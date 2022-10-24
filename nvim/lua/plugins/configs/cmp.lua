@@ -29,10 +29,10 @@ cmp.setup {
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "nvim_lua"},
+        { name = "nvim_lsp_signature_help" },
         { name = "luasnip" },
         { name = "path" },
-        { name = "nvim_lua"},
-    }, {
         { name = "buffer" },
     }),
     view = {
@@ -49,6 +49,9 @@ cmp.setup {
                 path = "[Path]",
             }
         }
+    },
+    experimental = {
+        ghost_text = true,
     },
     enabled = function ()
         local context = require "cmp.config.context"

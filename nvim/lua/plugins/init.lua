@@ -7,7 +7,8 @@ local configs = {
     "lualine",
     "treesitter",
     "autopairs",
-    "lspconf",
+    "lsp.lspconf",
+    "lsp.handlers",
     "cmp",
     "telescope",
 }

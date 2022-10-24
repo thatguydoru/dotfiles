@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/jtorres/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/home/jtorres/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-nvim-lua"] = {
     loaded = true,
     path = "/home/jtorres/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jtorres/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/jtorres/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

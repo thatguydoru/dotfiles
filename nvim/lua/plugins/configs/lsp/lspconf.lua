@@ -33,12 +33,6 @@ local border = {
     {"│", "FloatBorder"},
 }
 
--- LSP settings (for overriding per client)
-local handlers =  {
-    ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-    ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-}
-
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -54,34 +48,3 @@ vim.diagnostic.config({
     update_in_insert = true,
     severity_sort = false,
 })
-
-local capabilities = require "cmp_nvim_lsp".default_capabilities()
-local lspconfig = require "lspconfig"
-
-local servers = { "clangd", "pylsp", "gopls"}
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        capabilities = capabilities
-    }
-end
-
-lspconfig["sumneko_lua"].setup {
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT"
-            },
-            diagnostics = {
-                globals = { "vim" }
-            },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            telemetry = {
-                enable = false
-            }
-        }
-    },
-    handlers = handlers,
-}

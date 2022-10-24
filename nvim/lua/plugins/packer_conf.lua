@@ -62,8 +62,9 @@ return require('packer').startup(function(use)
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
 
-        "L3MON4D3/LuaSnip",
+            "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
 
         "onsails/lspkind.nvim",
@@ -75,6 +76,16 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.x',
         requires = { 'nvim-lua/plenary.nvim' }
     }
+
+    -- TODO:
+    -- when you think that you are ready for heavy goodies then
+    -- uncomment the plugin below
+    --use {
+    --    "simrat39/rust-tools.nvim",
+    --    requires = { 'nvim-lua/plenary.nvim' }
+    --}
+
+    use 'mfussenegger/nvim-dap'
 
     if packer_bootstrap then
         require('packer').sync()

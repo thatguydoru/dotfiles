@@ -37,7 +37,7 @@ local opts = {
     laststatus = 3,
     hidden = true,
     list = true,
-    completeopt = "menu,menuone,noselect"
+    completeopt = "menu,menuone,noselect,noinsert",
 }
 
 for k, v in pairs(opts) do
@@ -46,6 +46,7 @@ end
 
 vim.opt.listchars:append "eol:↴"
 vim.opt.listchars:append "trail: "
+vim.opt.shortmess:append "c"
 
 -- remove whitespace on save
 vim.cmd([[au BufWritePre * :%s/\s\+$//e]])
