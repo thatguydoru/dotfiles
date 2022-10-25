@@ -3,13 +3,14 @@ local lspconfig = require "lspconfig"
 
 
 local keymap = vim.keymap.set
-local on_attach = function (_, buffer)
-    local bufopt = { noremap = true, silent = true, buffer = buffer}
+local on_attach = function(_, buffer)
+    local bufopt = { noremap = true, silent = true, buffer = buffer }
     keymap("n", "<leader>p", vim.lsp.buf.hover, bufopt)
     keymap("n", "<leader>o", vim.lsp.buf.definition, bufopt)
     keymap("n", "<leader>i", vim.lsp.buf.rename, bufopt)
     keymap("n", "<leader>u", vim.lsp.buf.code_action, bufopt)
-    keymap("n", "<leader>y", vim.lsp.buf.format, bufopt)
+    --keymap("n", "<leader>y", vim.lsp.buf.format, bufopt)
+    vim.cmd([[au BufWritePre * lua vim.lsp.buf.format()]])
 end
 
 local servers = { "clangd", "pylsp" }
@@ -39,6 +40,7 @@ lspconfig["sumneko_lua"].setup {
             }
         }
     },
+    ''
 }
 
 -- TODO:
@@ -49,15 +51,28 @@ lspconfig["rust_analyzer"].setup {
     on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {
+            assist = {
+                importEnforceGranularity = true,
+                importPrefix = "crate",
+            },
+            cargo = {
+                allFeatures = true,
+            },
             checkOnSave = {
                 command = "clippy"
-            }
-        }
-    }
+            },
+            --inlayHints = {
+            --    lifetimeElisionHints = {
+            --        enable = true,
+            --        useParameterNames = true,
+            --    },
+            --},
+        },
+    },
 }
 
 lspconfig['gopls'].setup {
-    cmd = {'gopls'},
+    cmd = { 'gopls' },
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {

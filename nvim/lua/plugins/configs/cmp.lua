@@ -7,7 +7,7 @@ if cmp == nil then
     return
 end
 
-function leave_snippet()
+function LeaveSnippet ()
     if ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
         and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
         and not luasnip.session.jump_active
@@ -17,7 +17,7 @@ function leave_snippet()
 end
 
 vim.api.nvim_command([[
-    autocmd ModeChanged * lua leave_snippet()
+    autocmd ModeChanged * lua LeaveSnippet()
 ]])
 
 cmp.setup {
