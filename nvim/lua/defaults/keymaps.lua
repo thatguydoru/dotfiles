@@ -29,7 +29,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- TERMINAL --
-keymap("n", "<S-t>", ":split term://bash<CR>", opts)
+keymap("n", "<leader>t", ":split term://bash<CR>", opts)
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 
 -- PLUGIN KEYMAPS --

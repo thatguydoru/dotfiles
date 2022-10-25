@@ -6,12 +6,11 @@ local keymap = vim.keymap.set
 local on_attach = function (_, buffer)
     local bufopt = { noremap = true, silent = true, buffer = buffer}
     keymap("n", "<leader>p", vim.lsp.buf.hover, bufopt)
-    keymap("n", "<leader>o", vim.lsp.buf.format, bufopt)
-    keymap("n", "<leader>i", vim.lsp.buf.code_action, bufopt)
-    keymap("n", "<leader>u", vim.lsp.buf.rename, bufopt)
-    keymap("n", "<leader>m", vim.lsp.buf.definition, bufopt)
+    keymap("n", "<leader>o", vim.lsp.buf.definition, bufopt)
+    keymap("n", "<leader>i", vim.lsp.buf.rename, bufopt)
+    keymap("n", "<leader>u", vim.lsp.buf.code_action, bufopt)
+    keymap("n", "<leader>y", vim.lsp.buf.format, bufopt)
 end
-
 
 local servers = { "clangd", "pylsp" }
 for _, lsp in ipairs(servers) do
@@ -23,6 +22,7 @@ end
 
 lspconfig["sumneko_lua"].setup {
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
