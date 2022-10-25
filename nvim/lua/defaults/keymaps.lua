@@ -23,10 +23,14 @@ keymap("n", "<C-j>", ":resize +2<CR>", opts)
 keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
 
--- VISUAL MODE --
+-- VISUAL mode --
 -- stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- TERMINAL --
+keymap("n", "<S-t>", ":split term://bash<CR>", opts)
+keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 
 -- PLUGIN KEYMAPS --
 -- treeeeeeeeeeeeee
