@@ -22,10 +22,10 @@ pcmanfm-qt
 pavucontrol.ini
 htop
 btop
-btop/btop.log
 libreoffice
 procps
 gtk-3.0
 ranger
 go
 nvim.old
+btop.save
