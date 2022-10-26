@@ -45,6 +45,13 @@ keymap("n", "<leader>a", builtin.help_tags, opts)
 keymap("n", "<leader>s", builtin.diagnostics, opts)
 keymap("n", "<leader>d", builtin.builtin, opts)
 
--- LSP Diagnostics
+-- Diagnostics
 keymap("n", "[p", vim.diagnostic.goto_prev, opts)
 keymap("n", "]p", vim.diagnostic.goto_next, opts)
+
+keymap("n", "<leader>z", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>x", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>c", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>v", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "<leader>b", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "<leader>n", "<cmd>TroubleToggle lsp_references<cr>", opts)

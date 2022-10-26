@@ -38,7 +38,6 @@ require "telescope".setup {
         live_grep = no_preview(),
         buffers = no_preview(),
         help_tags = no_preview(),
-        diagnostics = no_preview(),
         builtin = no_preview()
     },
     extensions = {

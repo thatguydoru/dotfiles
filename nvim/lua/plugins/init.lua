@@ -11,6 +11,7 @@ local configs = {
     "lsp.handlers",
     "cmp",
     "telescope",
+    "trouble",
 }
 
 for _, config in ipairs(configs) do
