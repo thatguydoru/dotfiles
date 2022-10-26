@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-tmux new-session -s codenv 'nvim'\;\
+tmux new-session -s codenv\;\
     neww\;\
     selectw -t 0\;
