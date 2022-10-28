@@ -48,6 +48,7 @@ keymap("n", "<leader>d", builtin.builtin, opts)
 -- Diagnostics
 keymap("n", "[p", vim.diagnostic.goto_prev, opts)
 keymap("n", "]p", vim.diagnostic.goto_next, opts)
+keymap("n", "<leader>k", vim.diagnostic.open_float, opts)
 
 keymap("n", "<leader>z", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>x", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
