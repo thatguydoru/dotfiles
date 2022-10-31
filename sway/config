@@ -12,9 +12,9 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi 
+set $menu wofi
 #swaylock
-set $lock swaylock -f 
+set $lock swaylock -f
 
 ### Output configuration
 #
@@ -202,7 +202,7 @@ set $format $(xdg-user-dir SCREENSHOTS)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png
 bindsym --locked Print exec grim -o eDP-1 $format
 bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $format
 
-# Lock session 
+# Lock session
 set $lockman bash ~/.config/sway/lockman.sh
 bindsym Alt+Shift+l exec $lockman
 
@@ -212,7 +212,7 @@ bindsym Alt+Shift+l exec $lockman
 bar swaybar_command waybar
 
 #
-# Daemons 
+# Daemons
 #
 exec_always mako
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -248,14 +248,14 @@ set $surface1 #45475a
 set $red #f38ba8
 set $base #1e1e2e
 set $text #cdd6f4
-#class	                 border	    background text    [<indicator> [<child_border>]]
+#class                   border     background text  [<indicator> [<child_border>]]
 client.focused           $lavender  $lavender  $base $lavender
-client.focused_inactive  $overlay1  $overlay1  $base $overlay1
-client.unfocused         $overlay1  $overlay1  $text $overlay1
-client.urgent 		     $red       $red       $base $red
-
+client.focused_inactive  $surface1  $surface1  $base $surface1
+client.unfocused         $surface1  $surface1  $text $surface1
+client.urgent            $red       $red       $base $red
+s
 #
-# Float apps:
+# Window Rules:
 #
 for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px, border pixel 2
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 500 px height 280 px, move position 850 px 405 px
