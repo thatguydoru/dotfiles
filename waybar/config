@@ -1,26 +1,24 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 4,
-    "modules-left": ["custom/separator-backward", "sway/workspaces", "custom/separator-backward", "sway/mode"],
+    "spacing": 7,
+    "modules-left": [ "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
-    	"custom/separator-forward", 
-    	"network", 
-    	"backlight", 
-    	"pulseaudio", 
-        "battery", 
-        "clock", 
-        "custom/separator-forward"
+        "network",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "clock",
     ],
 
     "custom/separator-forward": {
-	"format": "/",
-	"tooltip": false
+    "format": "|",
+    "tooltip": false
     },
     "custom/separator-backward": {
-	"format": "\\",
-	"tooltip": false,
+    "format": "|",
+    "tooltip": false,
     },
     "sway/workspaces": {
         "disable-scroll": true,
@@ -29,15 +27,15 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-	"max-length": 50,
-	"tooltip": true,
+    "max-length": 50,
+    "tooltip": true,
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
-	"tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "Disconnected",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "",
         "format-alt": "{essid} {signalStrength}% "
@@ -56,7 +54,7 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
-        "tooltip-format": "{time}", 
+        "tooltip-format": "{time}",
         "on-click": "alacritty -e btop",
         "tooltip-format-discharging": "{capacity}% | {time}",
     },

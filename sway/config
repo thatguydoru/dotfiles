@@ -253,7 +253,7 @@ client.focused           $lavender  $lavender  $base $lavender
 client.focused_inactive  $surface1  $surface1  $base $surface1
 client.unfocused         $surface1  $surface1  $text $surface1
 client.urgent            $red       $red       $base $red
-s
+
 #
 # Window Rules:
 #
