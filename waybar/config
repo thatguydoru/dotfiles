@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 7,
+    "spacing": 4,
     "modules-left": [ "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
@@ -10,15 +10,13 @@
         "pulseaudio",
         "battery",
         "clock",
+        "custom/power-button",
     ],
 
-    "custom/separator-forward": {
-    "format": "|",
-    "tooltip": false
-    },
-    "custom/separator-backward": {
-    "format": "|",
-    "tooltip": false,
+    "custom/power-button": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl poweroff",
     },
     "sway/workspaces": {
         "disable-scroll": true,
@@ -27,8 +25,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-    "max-length": 50,
-    "tooltip": true,
+        "max-length": 50,
+        "tooltip": true,
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface

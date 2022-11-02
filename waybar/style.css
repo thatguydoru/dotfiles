@@ -4,7 +4,7 @@
     font-family: 'Hack Nerd Font';
     font-size: 11px;
     font-weight: bold;
-    min-height: 26px;
+    min-height: 18px;
 }
 
 window#waybar {
@@ -30,13 +30,15 @@ window#waybar.hidden {
     border-radius: 0px;
 }
 
+/*
 .modules-right > widget:last-child > #clock {
-    margin-right: 10;
+    margin-right: 5;
 }
 
 .modules-left > widget:last-child > #workspaces {
-    margin-left: 10;
+    margin-left: 5;
 }
+*/
 
 #workspaces button:hover {
     background: transparent;
@@ -60,7 +62,6 @@ window#waybar.hidden {
     color: @lavender;
 }
 
-#clock,
 #battery,
 #network,
 #backlight,
@@ -83,6 +84,7 @@ window#waybar.hidden {
 #clock {
     background-color: transparent;
     color: @lavender;
+    padding: 2px 3px;
 }
 
 #battery {
@@ -126,8 +128,7 @@ label:focus {
     color: @red;
 }
 
-#custom-separator-backward,
-#custom-separator-forward {
+#custom-power-button {
     background-color: transparent;
-    color: @surface2;
+    color: @maroon;
 }
