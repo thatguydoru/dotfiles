@@ -14,7 +14,7 @@
     ],
 
     "custom/power-button": {
-        "format": "",
+        "format": " ",
         "tooltip": false,
         "on-click": "systemctl poweroff",
     },
