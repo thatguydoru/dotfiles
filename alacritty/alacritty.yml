@@ -11,21 +11,21 @@ env:
 window:
   padding:
     x: 5
-    y: 5
+    y: 3
   dynamic_title: false
 
 font:
   normal:
-    family: Hack Nerd Font
+    family: MesloLGMDZ Nerd Font
     style: Regular
   bold:
-    family: Hack Nerd Font
+    family: MesloLGMDZ Nerd Font
     style: Bold
   italic:
-    family: Hack Nerd Font
+    family: MesloLGMDZ Nerd Font
     style: Italic
   bold_italic:
-    family: Hack Nerd Font
+    family: MesloLGMDZ Nerd Font
     style: Bold Italic
   size: 10.0
 
