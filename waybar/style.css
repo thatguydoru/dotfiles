@@ -58,7 +58,7 @@ window#waybar.hidden {
 
 #mode {
     background-color: transparent;
-    box-shadow: inset 0px -3px @lavender;
+    /*box-shadow: inset 0px -3px @lavender;*/
     color: @lavender;
 }
 
