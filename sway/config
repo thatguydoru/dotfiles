@@ -227,7 +227,7 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Lavender'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Lavender-Cursors'
-    gsettings set $gnome-schema font-name 'Liberation Sans 10'
+    gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
 }
 
 seat seat0 xcursor_theme Catppuccin-Mocha-Lavender-Cursors 24
@@ -240,7 +240,7 @@ default_floating_border pixel 2
 smart_borders on
 smart_gaps on
 gaps inner 5
-font Hack Nerd Font 9
+font NotoSans Nerd Font 9
 
 set $lavender #b4befe
 set $overlay1 #7f849c
