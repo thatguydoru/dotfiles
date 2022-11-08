@@ -228,6 +228,7 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Lavender-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
+    gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 }
 
 seat seat0 xcursor_theme Catppuccin-Mocha-Lavender-Cursors 24
@@ -262,7 +263,7 @@ for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky
 for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px
 for_window [app_id="polkit-gnome-authentication-agent-1"] floating enable
-for_window [class="pcmanfm-qt"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
+for_window [app_id="nemo"] floating enable, resize set width 600 px height 380 px, move position 755px 5px
 
 
 include /etc/sway/config.d/*
