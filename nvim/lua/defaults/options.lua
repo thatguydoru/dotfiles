@@ -30,7 +30,7 @@ local opts = {
     termguicolors = true,
     updatetime = 100,
     fileencoding = 'utf-8',
-    cmdheight = 0,
+    cmdheight = 1,
     clipboard = 'unnamedplus',
     showcmd = false,
     showmode = false,
@@ -46,7 +46,7 @@ end
 
 vim.opt.listchars:append "eol:↴"
 vim.opt.listchars:append "trail: "
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append "cI"
 
 -- remove whitespace on save
 vim.cmd([[au BufWritePre * :%s/\s\+$//e]])
