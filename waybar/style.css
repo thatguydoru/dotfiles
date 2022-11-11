@@ -4,7 +4,7 @@
     font-family: 'FiraCode Nerd Font';
     font-size: 11px;
     font-weight: bold;
-    min-height: 26px;
+    min-height: 18px;
 }
 
 window#waybar {
@@ -30,16 +30,6 @@ window#waybar.hidden {
     border-radius: 0px;
 }
 
-/*
-.modules-right > widget:last-child {
-    margin-left: 5;
-}
-
-.modules-left > widget:last-child > #workspaces {
-    margin-left: 5;
-}
-*/
-
 #workspaces button:hover {
     background: transparent;
     box-shadow: inset 0px -3px @overlay1;
@@ -62,14 +52,14 @@ window#waybar.hidden {
     color: @lavender;
 }
 
-#clock,
 #battery,
 #network,
 #backlight,
 #pulseaudio,
-#custom-power-button,
 #mode {
     padding: 0px 8px;
+    padding-right: 12px;
+    margin: 0;
 }
 
 #pulseaudio {
@@ -83,6 +73,7 @@ window#waybar.hidden {
 }
 
 #clock {
+    padding: 0px 8px;
     background-color: transparent;
     color: @lavender;
 }
@@ -129,6 +120,14 @@ label:focus {
 }
 
 #custom-power-button {
+    margin-right: 5px;
     background-color: transparent;
     color: @maroon;
+}
+
+#custom-drun {
+    padding-left: 8px;
+    margin-left: 5px;
+    background-color: transparent;
+    color: @lavender;
 }

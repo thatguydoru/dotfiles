@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "spacing": 4,
-    "modules-left": [ "sway/workspaces", "sway/mode"],
+    "modules-left": [ "custom/drun", "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
         "network",
@@ -13,8 +13,13 @@
         "custom/power-button",
     ],
 
+    "custom/drun": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wofi --show=drun",
+    },
     "custom/power-button": {
-        "format": " ",
+        "format": "",
         "tooltip": false,
         "on-click": "systemctl poweroff",
     },
