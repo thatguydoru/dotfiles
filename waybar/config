@@ -14,8 +14,8 @@
     ],
 
     "custom/drun": {
-        "format": "<span size=\"10pt\"></span>",
-        "tooltip": false,
+        "format": "<span size=\"10pt\"></span>",
+       "tooltip": false,
         "on-click": "wofi --show=drun",
     },
     "custom/power-button": {
