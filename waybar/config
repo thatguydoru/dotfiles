@@ -81,7 +81,7 @@
         "format-icons": ["", ""],
     },
     "tray": {
-            "icon-size": 21,
-            "spacing": 10,
+            "icon-size": 15,
+            "spacing": 6,
     },
 }

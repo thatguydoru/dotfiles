@@ -119,6 +119,10 @@ label:focus {
     color: @red;
 }
 
+#tray {
+    background-color: transparent;
+}
+
 #custom-power-button {
     margin-right: 5px;
     background-color: transparent;
@@ -128,7 +132,8 @@ label:focus {
 #custom-drun {
     padding-left: 8px;
     padding-right: 12px;
-    margin-left: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
     background-color: transparent;
     color: @blue;
 }
