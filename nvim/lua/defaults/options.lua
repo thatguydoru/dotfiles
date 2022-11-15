@@ -44,7 +44,6 @@ for k, v in pairs(opts) do
     vim.o[k] = v
 end
 
-vim.opt.listchars:append "eol:↴"
 vim.opt.listchars:append "trail: "
 vim.opt.shortmess:append "cI"
 

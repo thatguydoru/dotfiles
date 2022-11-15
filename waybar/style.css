@@ -73,7 +73,6 @@ window#waybar.hidden {
 }
 
 #clock {
-    padding: 0px 8px;
     background-color: transparent;
     color: @lavender;
 }
