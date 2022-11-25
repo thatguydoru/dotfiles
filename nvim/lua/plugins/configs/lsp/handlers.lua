@@ -9,8 +9,8 @@ local on_attach = function(_, buffer)
     keymap("n", "<leader>o", vim.lsp.buf.definition, bufopt)
     keymap("n", "<leader>i", vim.lsp.buf.rename, bufopt)
     keymap("n", "<leader>u", vim.lsp.buf.code_action, bufopt)
-    --keymap("n", "<leader>y", vim.lsp.buf.format, bufopt)
-    vim.cmd([[au BufWritePre * lua vim.lsp.buf.format()]])
+    keymap("n", "<leader>y", vim.lsp.buf.format, bufopt)
+    --vim.cmd([[au BufWritePre * lua vim.lsp.buf.format()]])
 end
 
 local servers = { "clangd", "pylsp" }
