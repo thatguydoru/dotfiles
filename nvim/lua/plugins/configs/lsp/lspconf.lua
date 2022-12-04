@@ -6,6 +6,8 @@ require "mason-lspconfig".setup {
         "clangd",
         "pylsp",
         "gopls",
+        "zls",
+        "crystalline",
     },
     automatic_installation = true,
 }

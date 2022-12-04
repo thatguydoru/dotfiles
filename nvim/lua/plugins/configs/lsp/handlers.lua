@@ -1,7 +1,6 @@
 local capabilities = require "cmp_nvim_lsp".default_capabilities()
 local lspconfig = require "lspconfig"
 
-
 local keymap = vim.keymap.set
 local on_attach = function(_, buffer)
     local bufopt = { noremap = true, silent = true, buffer = buffer }
@@ -13,7 +12,7 @@ local on_attach = function(_, buffer)
     --vim.cmd([[au BufWritePre * lua vim.lsp.buf.format()]])
 end
 
-local servers = { "clangd", "pylsp" }
+local servers = { "clangd", "pylsp", "crystalline", "zls" }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
@@ -39,8 +38,7 @@ lspconfig["sumneko_lua"].setup {
                 enable = false
             }
         }
-    },
-    ''
+    }
 }
 
 -- TODO:
