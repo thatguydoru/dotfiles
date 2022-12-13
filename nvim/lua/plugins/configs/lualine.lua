@@ -4,7 +4,10 @@ require "lualine".setup {
     },
     sections = {
         lualine_c = {
-            "buffers",
+            {
+                "buffers",
+                symbols = { alternate_file = "", },
+            },
         },
     },
 }
