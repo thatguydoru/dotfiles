@@ -216,6 +216,7 @@ bar swaybar_command waybar
 #
 exec_always mako
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always /usr/bin/xsettingsd &
 
 ### More custom stuff
 #
@@ -228,6 +229,7 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
+    gsettings set $gnome-schema scaling-factor 87040
     gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 }
 
