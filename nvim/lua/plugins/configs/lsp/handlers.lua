@@ -12,7 +12,14 @@ local on_attach = function(_, buffer)
     --vim.cmd([[au BufWritePre * lua vim.lsp.buf.format()]])
 end
 
-local servers = { "clangd", "pylsp", "crystalline", "jdtls" }
+local servers = {
+    "clangd",
+    "pylsp",
+    "crystalline",
+    "tsserver",
+    "eslint",
+    "emmet_ls",
+}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
