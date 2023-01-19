@@ -45,7 +45,7 @@ for k, v in pairs(opts) do
 end
 
 vim.opt.listchars:append "trail: "
-vim.opt.shortmess:append "cI"
+vim.opt.shortmess:append "c"
 
 -- remove whitespace on save
 vim.cmd([[au BufWritePre * :%s/\s\+$//e]])
