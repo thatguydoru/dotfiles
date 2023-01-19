@@ -13,6 +13,7 @@ local on_attach = function(_, buffer)
 end
 
 local servers = {
+    "zls",
     "clangd",
     "pylsp",
     "crystalline",
