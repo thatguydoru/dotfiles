@@ -19,6 +19,8 @@ local servers = {
     "crystalline",
     "tsserver",
     "eslint",
+    "cssls",
+    "html",
     "emmet_ls",
 }
 for _, lsp in ipairs(servers) do
@@ -95,3 +97,5 @@ lspconfig['gopls'].setup {
         usePlaceholders = true,
     }
 }
+
+--lspconfig["emmet_ls"].setup()

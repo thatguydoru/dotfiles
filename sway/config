@@ -241,8 +241,8 @@ seat seat0 xcursor_theme Catppuccin-Mocha-Dark-Cursors 24
 default_border pixel 2
 default_floating_border pixel 2
 smart_borders on
-smart_gaps on
-gaps inner 5
+#smart_gaps on
+#gaps inner 5
 font NotoSans Nerd Font 9
 
 set $lavender #b4befe
