@@ -4,5 +4,6 @@ local modules = {
 }
 
 for _, m in ipairs(modules) do
-    require("defaults."..m)
+    --require("defaults."..m)
+    pcall(require, "defaults."..m)
 end

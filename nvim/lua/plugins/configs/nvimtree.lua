@@ -1,35 +1,30 @@
 local api = require "nvim-tree.api"
-local Event = api.events.Event
 
+local Event = api.events.Event
 api.events.subscribe(Event.FileCreated, function (data)
     vim.cmd(":e" .. data["fname"])
 end)
 
 require "nvim-tree".setup {
+    hijack_unnamed_buffer_when_opening = true,
     view = {
         adaptive_size = true,
+        side = "right",
     },
     renderer = {
         group_empty = false,
         indent_markers = {
-            enable = true,
-            inline_arrows = true,
-            icons = {
-                corner = "└",
-                edge = "│",
-                item = "│",
-                bottom = "─",
-                none = " ",
-            },
+            enable = false,
+            inline_arrows = false,
         },
-        highlight_git = true,
+        highlight_git = false,
     },
     update_focused_file = {
         enable = true,
     },
     diagnostics = {
         enable = true,
-        show_on_dirs = true,
+        show_on_dirs = false,
         debounce_delay = 50,
         icons = {
             hint = "",

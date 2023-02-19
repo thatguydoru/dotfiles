@@ -2,11 +2,6 @@ local cmp = require "cmp"
 local lspkind = require "lspkind"
 local luasnip = require "luasnip"
 
-if cmp == nil then
-    print("cmp seems to not be installed")
-    return
-end
-
 function LeaveSnippet ()
     if ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
         and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]

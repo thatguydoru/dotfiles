@@ -1,11 +1,6 @@
 require "lualine".setup {
     options = {
         theme = "catppuccin",
-        disabled_filetypes = {
-            statusline = {
-                "",
-            },
-        },
     },
     sections = {
         lualine_c = {

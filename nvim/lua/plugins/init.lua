@@ -15,5 +15,6 @@ local configs = {
 }
 
 for _, config in ipairs(configs) do
-    require("plugins.configs."..config)
+    --require("plugins.configs."..config)
+    pcall(require, "plugins.configs."..config)
 end

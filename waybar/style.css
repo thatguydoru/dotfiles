@@ -1,55 +1,55 @@
 @import "/home/jtorres/.config/waybar/catppuccin/themes/mocha.css";
 
 * {
-    font-family: 'FiraCode Nerd Font';
-    font-size: 11px;
-    font-weight: bold;
-    min-height: 28px;
+  font-family: 'JetBrains Mono Nerd Font';
+  font-size: 11px;
+  font-weight: bold;
+  min-height: 28px;
 }
 
 window#waybar {
-    background-color: @base;
-    color: @text;
-    border-bottom: 2px solid @crust;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: @base;
+  color: @text;
+  border-bottom: 2px solid @crust;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 #workspaces button {
-    padding: 0px 1px;
-    background-color: transparent;
-    color: @text;
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0px -3px transparent;
-    /* Avoid rounded borders under each workspace name */
-    border: none;
-    border-radius: 0px;
+  padding: 0px 1px;
+  background-color: transparent;
+  color: @text;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0px -3px transparent;
+  /* Avoid rounded borders under each workspace name */
+  border: none;
+  border-radius: 0px;
 }
 
 #workspaces button:hover {
-    background: transparent;
-    box-shadow: inset 0px -3px @overlay1;
+  background: transparent;
+  box-shadow: inset 0px -3px @overlay1;
 }
 
 #workspaces button.focused {
-    background-color: transparent;
-    color: @lavender;
-    box-shadow: inset 0px -3px @lavender;
+  background-color: transparent;
+  color: @lavender;
+  box-shadow: inset 0px -3px @lavender;
 }
 
 #workspaces button.urgent {
-    background-color: transparent;
-    color: @peach;
+  background-color: transparent;
+  color: @peach;
 }
 
 #mode {
-    background-color: transparent;
-    /*box-shadow: inset 0px -3px @lavender;*/
-    color: @lavender;
+  background-color: transparent;
+  /*box-shadow: inset 0px -3px @lavender;*/
+  color: @lavender;
 }
 
 #clock,
@@ -59,80 +59,80 @@ window#waybar.hidden {
 #backlight,
 #pulseaudio,
 #mode {
-    padding: 0px 8px;
-    margin: 0;
+  padding: 0px 8px;
+  margin: 0;
 }
 
 #pulseaudio {
-    background-color: transparent;
-    color: @sapphire;
+  background-color: transparent;
+  color: @sapphire;
 }
 
 #backlight {
-    background-color: transparent;
-    color: @sky;
+  background-color: transparent;
+  color: @sky;
 }
 
 #clock {
-    background-color: transparent;
-    color: @lavender;
+  background-color: transparent;
+  color: @lavender;
 }
 
 #battery {
-    background-color: transparent;
-    color: @blue;
+  background-color: transparent;
+  color: @blue;
 }
 
 #battery.charging, #battery.plugged {
-    background-color: transparent;
-    color: @blue;
+  background-color: transparent;
+  color: @blue;
 }
 
 @keyframes blink {
-    to {
-        background-color: transparent;
-        color: @blue;
-    }
+  to {
+    background-color: transparent;
+    color: @blue;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background-color: transparent;
-    color: @red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: transparent;
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #network {
-    background-color: transparent;
-    color: @teal;
+  background-color: transparent;
+  color: @teal;
 }
 
 #network.disconnected {
-    background-color: transparent;
-    color: @red;
+  background-color: transparent;
+  color: @red;
 }
 
 #tray {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #custom-power-button {
-    margin-right: 5px;
-    background-color: transparent;
-    color: @maroon;
+  margin-right: 5px;
+  background-color: transparent;
+  color: @maroon;
 }
 
 #custom-drun {
-    padding-left: 8px;
-    padding-right: 12px;
-    margin-left: 3px;
-    background-color: transparent;
-    color: @blue;
+  padding-left: 8px;
+  padding-right: 12px;
+  margin-left: 3px;
+  background-color: transparent;
+  color: @blue;
 }
