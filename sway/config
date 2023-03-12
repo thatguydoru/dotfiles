@@ -22,6 +22,7 @@ set $lock swaylock -f
 output * {
     bg ~/.config/sway/wallpapers/Cloudsnight.jpg fill
     resolution 1366x768@60Hz position 1366,0
+    scale 1
 }
 
 ### Idle configuration
