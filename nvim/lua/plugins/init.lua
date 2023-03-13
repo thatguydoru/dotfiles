@@ -3,7 +3,7 @@ require "plugins.packer_conf"
 local configs = {
     "nvimtree",
     "catppuccin",
-    "blankline",
+    -- "blankline",
     "lualine",
     "treesitter",
     "autopairs",

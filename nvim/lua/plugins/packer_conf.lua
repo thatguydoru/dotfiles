@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
         tag = "nightly",
     }
 
-    use "lukas-reineke/indent-blankline.nvim"
+    -- use "lukas-reineke/indent-blankline.nvim"
 
     use {
         "nvim-lualine/lualine.nvim",
