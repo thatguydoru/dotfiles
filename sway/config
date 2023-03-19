@@ -12,15 +12,17 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi
+# set $menu wofi
+set $menu bash ~/.config/sway/menu.sh
 #swaylock
 set $lock swaylock -f
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+set $wp ~/.config/sway/wallpapers/Cloudsnight.jpg
 output * {
-    bg ~/.config/sway/wallpapers/Cloudsnight.jpg fill
+    bg $wp fill
     resolution 1366x768@60Hz position 1366,0
     scale 1
 }
@@ -224,12 +226,11 @@ exec_always /usr/bin/xsettingsd &
 # Theming:
 #
 set $gnome-schema org.gnome.desktop.interface
-
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
-    gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
+    gsettings set $gnome-schema font-name 'JetBrains Mono Nerd Font 9'
     gsettings set $gnome-schema scaling-factor 87040
     gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 }
