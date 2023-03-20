@@ -22,6 +22,7 @@ local servers = {
     "cssls",
     "html",
     "emmet_ls",
+    "ocamllsp"
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {

@@ -1,20 +1,16 @@
-require "plugins.packer_conf"
-
-local configs = {
-    "nvimtree",
-    "catppuccin",
-    -- "blankline",
-    "lualine",
-    "treesitter",
-    "autopairs",
-    "lsp.lspconf",
-    "lsp.handlers",
-    "cmp",
-    "telescope",
-    "trouble",
+local modules = {
+      "autopairs",
+      "catppuccin",
+      "cmp",
+      "lsp_handlers",
+      "lspconf",
+      "lualine",
+      "nvimtree",
+      "telescope",
+      "treesitter",
+      "trouble",
 }
 
-for _, config in ipairs(configs) do
-    --require("plugins.configs."..config)
-    pcall(require, "plugins.configs."..config)
+for _, m in ipairs(modules) do
+    pcall(require, "plugins." .. m)
 end
