@@ -1,7 +1,7 @@
 local options = {
   -- indent and wrap
   shiftwidth = 4,
-  expandtab =  true,
+  expandtab = true,
   tabstop = 4,
   smartindent = true,
   wrap = false,

@@ -15,7 +15,8 @@ local plugins = {
   -- colorscheme
   { 'catppuccin/nvim', name = 'catppuccin' },
   -- file explorer
-  { 'nvim-tree/nvim-tree.lua',
+  {
+    'nvim-tree/nvim-tree.lua',
     version = '*',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },

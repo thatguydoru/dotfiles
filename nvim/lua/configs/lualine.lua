@@ -6,10 +6,7 @@ require ('lualine').setup({
   },
   sections = {
     lualine_c = {
-      {
-        'buffers',
-        symbols = { alternate_file = '', },
-      },
+      { 'buffers', symbols = { alternate_file = '', } },
     },
     lualine_x = {},
   },

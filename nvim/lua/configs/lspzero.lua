@@ -6,10 +6,10 @@ local lsp = require('lsp-zero').preset({
 })
 
 lsp.on_attach(function(_, bufnr)
-  local opts = {buffer = bufnr}
+  local opts = { buffer = bufnr }
 
-  vim.keymap.set({'n', 'x'}, 'gq', function()
-    vim.lsp.buf.format({async = false, timeout_ms = 10000})
+  vim.keymap.set({ 'n', 'x' }, 'gq', function()
+    vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
   end, opts)
 end)
 
