@@ -29,10 +29,17 @@ autocmd('QuitPre', {
 })
 -- on nvim's start, set its cwd to the specified directory
 autocmd('VimEnter', {
+  group = augroup('tree_on_enter'),
   callback = function(data)
-    local is_directory = vim.fn.isdirectory(data.file) == 1
-    if not is_directory then return end
-    vim.cmd.cd(data.file)
+    local directory = vim.fn.isdirectory(data.file) == 1
+    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+    if not directory and not no_name then return end
+
+    if directory then
+      vim.cmd.cd(data.file)
+    end
+
     require('nvim-tree.api').tree.open()
   end
 })
