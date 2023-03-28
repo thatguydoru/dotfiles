@@ -38,7 +38,7 @@ local options = {
   laststatus = 3,
   hidden = true,
   list = true,
-  completeopt = 'noselect,noinsert,menu,menuone,',
+  completeopt = 'noselect,noinsert,menu,menuone',
 }
 
 for k, v in pairs(options) do
