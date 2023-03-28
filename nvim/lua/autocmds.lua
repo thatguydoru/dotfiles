@@ -8,17 +8,9 @@ vim.cmd([[au BufWritePre * :%s/\s\+$//e]])
 -- don't auto comment on new lines
 vim.cmd([[au BufEnter * set fo-=c fo-=o]])
 
-local ftpatterns = {
-  'lua',
-  'typescript',
-  'typescriptreact',
-  'html',
-  'css',
-  'scss'
-}
 autocmd('FileType', {
   group = augroup('double_space'),
-  pattern = ftpatterns,
+  pattern = { 'lua', 'typescript', 'typescriptreact', 'html', 'css', 'scss' },
   callback = function()
     vim.opt.shiftwidth = 2
     vim.opt.expandtab = true
@@ -28,9 +20,19 @@ autocmd('FileType', {
   end
 })
 
+-- Nvim Tree autocmds --
 -- auto close nvimtree on exit
 autocmd('QuitPre', {
   callback = function()
     vim.cmd('NvimTreeClose')
   end,
+})
+-- on nvim's start, set its cwd to the specified directory
+autocmd('VimEnter', {
+  callback = function(data)
+    local is_directory = vim.fn.isdirectory(data.file) == 1
+    if not is_directory then return end
+    vim.cmd.cd(data.file)
+    require('nvim-tree.api').tree.open()
+  end
 })

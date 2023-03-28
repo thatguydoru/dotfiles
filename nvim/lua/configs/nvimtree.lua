@@ -1,11 +1,12 @@
 local api = require('nvim-tree.api')
 
 local Event = api.events.Event
-api.events.subscribe(Event.FileCreated, function (data)
+api.events.subscribe(Event.FileCreated, function(data)
   vim.cmd(':e' .. data['fname'])
 end)
 
 require('nvim-tree').setup({
+  hijack_unnamed_buffer_when_opening = true,
   view = {
     adaptive_size = true,
     side = 'right',
@@ -37,10 +38,10 @@ require('nvim-tree').setup({
   },
   actions = {
     open_file = {
-        quit_on_open = true,
+      quit_on_open = true,
     },
     remove_file = {
-        close_window = true
+      close_window = true
     }
   },
 })
