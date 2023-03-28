@@ -4,7 +4,6 @@ local configs = {
   'lualine',
   'treesitter',
   'lspzero',
-  'lspconf',
 }
 
 for _, c in ipairs(configs) do
