@@ -6,7 +6,6 @@ api.events.subscribe(Event.FileCreated, function(data)
 end)
 
 require('nvim-tree').setup({
-  hijack_unnamed_buffer_when_opening = true,
   view = {
     adaptive_size = true,
     side = 'right',

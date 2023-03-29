@@ -15,13 +15,13 @@ local options = {
   relativenumber = true,
   numberwidth = 4,
   signcolumn = 'yes',
-  colorcolumn = '80',
+  -- colorcolumn = '80',
   -- backup
   swapfile = false,
   backup = false,
   writebackup = false,
   -- cursor and scroll
-  cursorline = true,
+  cursorline = false,
   scrolloff = 8,
   sidescrolloff = 8,
   -- splits

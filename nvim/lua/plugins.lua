@@ -53,6 +53,3 @@ local plugins = {
 }
 
 require('lazy').setup(plugins)
-
--- Active colorscheme
-vim.cmd.colorscheme 'catppuccin'

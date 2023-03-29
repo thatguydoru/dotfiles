@@ -23,9 +23,7 @@ autocmd('FileType', {
 -- Nvim Tree autocmds --
 -- auto close nvimtree on exit
 autocmd('QuitPre', {
-  callback = function()
-    vim.cmd('NvimTreeClose')
-  end,
+  callback = function() vim.cmd('NvimTreeClose') end,
 })
 -- on nvim's start, set its cwd to the specified directory
 autocmd('VimEnter', {

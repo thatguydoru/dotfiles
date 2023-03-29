@@ -21,7 +21,7 @@ set $lock swaylock -f
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * {
-    bg ~/.config/sway/wallpapers/Cloudsnight.jpg fill
+    bg ~/.config/sway/wallpapers/Rainnight.jpg fill
     resolution 1366x768@60Hz position 1366,0
     scale 1
 }
