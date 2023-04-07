@@ -8,9 +8,10 @@
 }
 
 window#waybar {
-  background-color: @base;
+  /*background-color: @base;*/
+  /*border-bottom: 2px solid @crust;*/
+  background-color: rgba(30, 30, 46, 0.55);
   color: @text;
-  border-bottom: 2px solid @crust;
   transition-property: background-color;
   transition-duration: .5s;
 }

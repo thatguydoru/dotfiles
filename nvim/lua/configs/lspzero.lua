@@ -21,7 +21,6 @@ lsp.configure('rust_analyzer', {
 })
 
 lsp.nvim_workspace()
-
 lsp.setup()
 
 vim.diagnostic.config({
