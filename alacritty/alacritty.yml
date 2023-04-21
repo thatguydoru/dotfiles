@@ -13,6 +13,7 @@ window:
   #   x: 5
   #   y: 3
   dynamic_title: false
+  opacity: 0.60
 
 font:
   normal:

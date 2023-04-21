@@ -21,7 +21,8 @@
     "custom/power-button": {
         "format": "",
         "tooltip": false,
-        "on-click": "systemctl poweroff",
+        // "on-click": "systemctl poweroff",
+        "on-click": "swaynag -t warning -m 'Shutdown?' -B 'Yes' 'systemctl poweroff'"
     },
     "sway/workspaces": {
         "disable-scroll": true,

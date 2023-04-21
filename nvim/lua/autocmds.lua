@@ -20,6 +20,14 @@ autocmd('FileType', {
   end
 })
 
+autocmd({ 'BufNewFile', 'BufRead' }, {
+  group = augroup('wgsl'),
+  pattern = { '*.wgsl' },
+  callback = function()
+    vim.opt.filetype = 'wgsl'
+  end
+})
+
 -- Nvim Tree autocmds --
 -- auto close nvimtree on exit
 autocmd('QuitPre', {
