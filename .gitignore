@@ -31,8 +31,8 @@ aseprite
 godot
 openttd
 Meltytech
-gtk-2.0/
-obs-studio/
+gtk-2.0
+obs-studio
 kritadisplayrc
 kritarc
 VirtualBox
@@ -46,8 +46,9 @@ lutris
 obsidian
 Electron
 cni
-Kitware/
-LDtk/
-QtProject/
+Kitware
+LDtk
+QtProject
 kdenlive-layoutsrc
 kdenliverc
+blender
