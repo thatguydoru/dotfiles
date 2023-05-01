@@ -1,4 +1,2 @@
 include catppuccin-mocha
-
-set recolor true
 set selection-clipboard clipboard

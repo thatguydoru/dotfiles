@@ -12,7 +12,6 @@
         "clock",
         "custom/power-button",
     ],
-
     "custom/drun": {
         "format": "<span size=\"10pt\"></span>",
        "tooltip": false,
@@ -37,10 +36,10 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈁",
         "tooltip-format-disconnected": "Disconnected",
-        "format-linked": "{ifname} (No IP) ",
+        "format-linked": "{ifname} (No IP) 󰈁",
         "format-disconnected": "",
         "format-alt": "{essid} {signalStrength}% "
     },
@@ -51,7 +50,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󱐋",
         "format-plugged": "{capacity}% ",
         // "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -68,7 +67,7 @@
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "default": ["", ""]
