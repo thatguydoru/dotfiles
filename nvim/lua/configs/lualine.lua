@@ -1,13 +1,23 @@
-require ('lualine').setup({
+require('lualine').setup({
   options = {
     theme = 'catppuccin',
-    component_separators = { left = '|', right = '|'},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '|', right = '|' },
+    section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_c = {
-      { 'buffers', symbols = { alternate_file = '', } },
+    lualine_b = { 'branch', 'diff',
+      {
+        'diagnostics',
+        symbols = {
+          error = '✘ ',
+          warn = '▲ ',
+          hint = '⚑ ',
+          info = ' '
+        }
+      }
     },
-    lualine_x = {},
+    -- lualine_c = {
+    --   { 'buffers', symbols = { alternate_file = '', } },
+    -- },
   },
 })
