@@ -10,7 +10,7 @@ vim.cmd([[au BufEnter * set fo-=c fo-=o]])
 
 autocmd('FileType', {
   group = augroup('double_space'),
-  pattern = { 'lua', 'typescript', 'typescriptreact', 'html', 'css', 'scss' },
+  pattern = { 'lua', 'javascript', 'typescript', 'typescriptreact', 'html', 'css', 'scss' },
   callback = function()
     vim.opt.shiftwidth = 2
     vim.opt.expandtab = true

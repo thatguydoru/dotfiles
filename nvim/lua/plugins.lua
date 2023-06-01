@@ -50,6 +50,8 @@ local plugins = {
       {'L3MON4D3/LuaSnip'},
     },
   },
+  -- Gitsigns
+  { 'lewis6991/gitsigns.nvim' },
 }
 
 require('lazy').setup(plugins)

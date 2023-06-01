@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/home/jtorres/.config/nvim/lua",
+        "/home/jtorres/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/5ca35080",
+        "/home/jtorres/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/4a6e8b6f"
+    ]
+}

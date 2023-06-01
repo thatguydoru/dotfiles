@@ -5,6 +5,7 @@ local configs = {
   'lualine',
   'treesitter',
   'lspzero',
+  'gitsigns',
 }
 
 for _, c in ipairs(configs) do
