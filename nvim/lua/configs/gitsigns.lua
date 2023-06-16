@@ -1,5 +1,5 @@
 require('gitsigns').setup {
-  -- ...
+  attach_to_untracked = false,
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 

@@ -3,6 +3,25 @@ local lsp = require('lsp-zero').preset({
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
   suggest_lsp_servers = false,
+  setup_servers_on_start = false,
+})
+
+lsp.setup_servers({
+  'zls',
+  'lua_ls',
+  'gopls',
+  'hls',
+  'jedi_language_server',
+  'html',
+  'rust_analyzer',
+  'typst_lsp',
+  'wgsl_analyzer',
+  'cssls',
+  'clangd',
+  'tsserver',
+  'volar',
+  'sourcekit',
+  'ocamllsp',
 })
 
 lsp.on_attach(function(_, bufnr)
