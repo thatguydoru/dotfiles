@@ -8,8 +8,6 @@
 }
 
 window#waybar {
-  /*background-color: @base;*/
-  /*border-bottom: 2px solid @crust;*/
   background-color: rgba(30, 30, 46, 0.55);
   color: @text;
   transition-property: background-color;
@@ -24,9 +22,7 @@ window#waybar.hidden {
   padding: 0px 1px;
   background-color: transparent;
   color: @text;
-  /* Use box-shadow instead of border so the text isn't offset */
   box-shadow: inset 0px -3px transparent;
-  /* Avoid rounded borders under each workspace name */
   border: none;
   border-radius: 0px;
 }
@@ -47,9 +43,9 @@ window#waybar.hidden {
   color: @peach;
 }
 
+#scratchpad,
 #mode {
   background-color: transparent;
-  /*box-shadow: inset 0px -3px @lavender;*/
   color: @lavender;
 }
 
@@ -59,32 +55,29 @@ window#waybar.hidden {
 #network,
 #backlight,
 #pulseaudio,
+#scratchpad,
+#cpu,
+#memory,
 #mode {
   padding: 0px 8px;
   margin: 0;
 }
 
-#pulseaudio {
+#clock {
   background-color: transparent;
-  color: @sapphire;
+  color: @teal;
 }
 
-#backlight {
+#cpu,
+#memory {
   background-color: transparent;
   color: @sky;
 }
 
-#clock {
-  background-color: transparent;
-  color: @lavender;
-}
-
-#battery {
-  background-color: transparent;
-  color: @blue;
-}
-
-#battery.charging, #battery.plugged {
+#pulseaudio,
+#battery,
+#battery.charging,
+#battery.plugged {
   background-color: transparent;
   color: @blue;
 }
@@ -110,9 +103,10 @@ label:focus {
   background-color: #000000;
 }
 
+#backlight,
 #network {
   background-color: transparent;
-  color: @teal;
+  color: @sapphire;
 }
 
 #network.disconnected {

@@ -1,5 +1,6 @@
 local lsp = require('lsp-zero').preset({
   name = 'recommended',
+  float_border = 'solid',
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
   suggest_lsp_servers = false,
@@ -23,6 +24,7 @@ lsp.setup_servers({
   'sourcekit',
   'ocamllsp',
 })
+
 
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr }
