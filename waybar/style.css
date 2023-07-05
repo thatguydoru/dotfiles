@@ -60,21 +60,16 @@ window#waybar.hidden {
 #memory,
 #mode {
   padding: 0px 8px;
-  margin: 0;
+  margin: 0px;
 }
 
 #clock {
   background-color: transparent;
-  color: @teal;
-}
-
-#cpu,
-#memory {
-  background-color: transparent;
   color: @sky;
 }
 
-#pulseaudio,
+#cpu,
+#memory,
 #battery,
 #battery.charging,
 #battery.plugged {
@@ -103,6 +98,7 @@ label:focus {
   background-color: #000000;
 }
 
+#pulseaudio,
 #backlight,
 #network {
   background-color: transparent;
@@ -130,4 +126,9 @@ label:focus {
   margin-left: 3px;
   background-color: transparent;
   color: @blue;
+}
+
+#custom-separator {
+  background-color: transparent;
+  color: @lavender;
 }

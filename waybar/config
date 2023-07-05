@@ -5,20 +5,26 @@
     "modules-left": [ "sway/workspaces", "tray", "sway/scratchpad", "sway/mode" ],
     "modules-center": [ "clock" ],
     "modules-right": [
-        "cpu",
-        "memory",
         "network",
         "backlight",
         "pulseaudio",
+        "cpu",
+        "memory",
         "battery",
         "custom/power-button"
     ],
-    "cpu": {
-        "format": "{usage}% ",
+    "custom/separator": {
+        "format": "",
         "tooltip": false
     },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": true,
+        "on-click": "kitty btop"
+    },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "kitty btop",
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -72,7 +78,6 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
         "tooltip-format": "{time}",
-        "on-click": "kitty btop",
         "tooltip-format-discharging": "{capacity}% | {time}"
     },
     "clock": {

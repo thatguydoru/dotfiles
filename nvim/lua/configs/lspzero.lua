@@ -21,7 +21,6 @@ lsp.setup_servers({
   'clangd',
   'tsserver',
   'volar',
-  'sourcekit',
   'ocamllsp',
 })
 
