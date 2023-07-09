@@ -7,4 +7,3 @@ IndentCaseLabels: true
 ColumnLimit: 80
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: Empty
-AlwaysBreakAfterReturnType: All
