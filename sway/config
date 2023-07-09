@@ -226,7 +226,7 @@ exec_always /usr/bin/xsettingsd &
 #
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
+    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
