@@ -13,20 +13,20 @@ window:
   #   x: 5
   #   y: 3
   dynamic_title: false
-  opacity: 0.60
+  opacity: 0.70
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: CommitMono
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: CommitMono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: CommitMono
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: CommitMono
     style: Bold Italic
   size: 10.0
 

@@ -13,7 +13,7 @@ autocmd('FileType', {
   pattern = {
     'markdown', 'ocaml', 'lua', 'vue',
     'javascript', 'typescript', 'typescriptreact',
-    'html', 'css', 'scss',
+    'html', 'css', 'scss', 'svelte',
   },
   callback = function()
     vim.opt.shiftwidth = 2
