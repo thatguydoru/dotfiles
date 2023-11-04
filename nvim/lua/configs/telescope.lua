@@ -1,4 +1,7 @@
-local noprev = function()
+local telescope = require('telescope')
+local actions = require('telescope.actions')
+
+local function noprev()
   return {
     theme = 'dropdown',
     previewer = false,
@@ -6,7 +9,13 @@ local noprev = function()
   }
 end
 
-local telescope = require('telescope')
+local buffers = noprev()
+buffers.mappings = {
+  i = {
+    ['<c-d>'] = actions.delete_buffer + actions.move_to_top,
+  },
+}
+
 telescope.setup({
   defaults = {
     vimgrep_arguments = {
@@ -17,14 +26,12 @@ telescope.setup({
       '--line-number',
       '--column',
       '--smart-case',
-      '--trim', -- add this value
+      '--trim',
     },
   },
-  theme = 'dropdown',
   pickers = {
     find_files = noprev(),
-    live_grep = noprev(),
-    buffers = noprev(),
+    buffers = buffers,
     help_tags = noprev(),
     builtin = noprev(),
   },
