@@ -14,7 +14,7 @@ lsp.on_attach(function(_, bufnr)
   end, opts)
 end)
 
-local servers = { 'clangd', 'gopls', 'hls', 'ocamllsp' }
+local servers = { 'clangd', 'hls', 'ocamllsp' }
 local mason_servers = require('mason-lspconfig').get_installed_servers()
 for _, s in ipairs(mason_servers) do
   table.insert(servers, s)

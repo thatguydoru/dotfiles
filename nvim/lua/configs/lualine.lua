@@ -16,8 +16,5 @@ require('lualine').setup({
         }
       }
     },
-    -- lualine_c = {
-    --   { 'buffers', symbols = { alternate_file = '', } },
-    -- },
   },
 })

@@ -190,13 +190,13 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p sticky toggle
 
 # Brightness control
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 2%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 2%+
 
 # Audio control
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Screenshot binds
@@ -226,7 +226,7 @@ exec_always /usr/bin/xsettingsd &
 #
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-dark'
+    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
@@ -239,12 +239,14 @@ seat seat0 xcursor_theme Catppuccin-Mocha-Dark-Cursors 24
 #
 # Border:
 #
+titlebar_border_thickness 4
+titlebar_padding 4 4
 default_border pixel 2
 default_floating_border pixel 2
 smart_borders on
-#smart_gaps on
-#gaps inner 5
-font JetBrainsMono Nerd Font 9
+smart_gaps on
+gaps inner 8
+font JetBrainsMono Nerd Font 8
 
 set $lavender #b4befe
 set $overlay1 #7f849c

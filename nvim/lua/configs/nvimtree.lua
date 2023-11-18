@@ -1,10 +1,3 @@
-local api = require('nvim-tree.api')
-
--- local Event = api.events.Event
--- api.events.subscribe(Event.FileCreated, function(data)
---   vim.cmd(':e' .. data['fname'])
--- end)
-
 require('nvim-tree').setup({
   view = {
     adaptive_size = true,
