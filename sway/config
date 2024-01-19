@@ -13,9 +13,9 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu wofi
-set $menu bash ~/.config/sway/menu.sh
+set $menu wofi --conf=$HOME/.config/wofi/launch
 #swaylock
-set $lock swaylock -f
+set $lock swaylock -f -c 550000
 
 ### Output configuration
 #
@@ -29,8 +29,8 @@ output * {
 ### Idle configuration
 #
 exec swayidle -w \
-     timeout 400 '$lock' \
-     timeout 370 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     timeout 1000 '$lock' \
+     timeout 1300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
      before-sleep '$lock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -204,10 +204,6 @@ set $format $(xdg-user-dir SCREENSHOTS)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png
 bindsym --locked Print exec grim -o eDP-1 $format
 bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $format
 
-# Lock session
-set $lockman bash ~/.config/sway/lockman.sh
-bindsym Alt+Shift+l exec $lockman
-
 #
 # Status Bar:
 #
@@ -216,9 +212,9 @@ bar swaybar_command waybar
 #
 # Daemons
 #
-exec_always mako
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always /usr/bin/xsettingsd &
+exec mako
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/bin/xsettingsd &
 
 ### More custom stuff
 #
@@ -228,13 +224,13 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
+    gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Mauve-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
     gsettings set $gnome-schema scaling-factor 87040
     gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 }
 
-seat seat0 xcursor_theme Catppuccin-Mocha-Dark-Cursors 24
+seat seat0 xcursor_theme Catppuccin-Mocha-Mauve-Cursors 28
 
 #
 # Border:
@@ -248,17 +244,40 @@ smart_gaps on
 gaps inner 8
 font JetBrainsMono Nerd Font 8
 
-set $lavender #b4befe
-set $overlay1 #7f849c
-set $surface1 #45475a
-set $red #f38ba8
-set $base #1e1e2e
-set $text #cdd6f4
+# Catppuccin: https://github.com/catppuccin/i3
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
 #class                   border     background text  [<indicator> [<child_border>]]
-client.focused           $lavender  $lavender  $base $lavender
-client.focused_inactive  $surface1  $surface1  $base $surface1
-client.unfocused         $surface1  $surface1  $text $surface1
-client.urgent            $red       $red       $base $red
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 #
 # Window Rules:
