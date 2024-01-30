@@ -13,7 +13,7 @@ style = "Bold Italic"
 
 [font.italic]
 family = "Iosevka Fixed"
-style = "Bold Italic"
+style = "Italic"
 
 [font.normal]
 family = "Iosevka Fixed"
