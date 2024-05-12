@@ -9,7 +9,8 @@ local configs = {
 }
 
 for _, c in ipairs(configs) do
-  if not pcall(require, 'configs.' .. c) then
-    print('[ERR] Failed to load config: ' .. c)
+  local success, err = pcall(require, 'configs.' .. c)
+  if not success then
+    print('[ERR] Failed to load config: ' .. c .. ': ' .. err)
   end
 end

@@ -2,9 +2,10 @@
     "layer": "top",
     "position": "top",
     "spacing": 4,
-    "modules-left": [ "sway/workspaces", "tray", "sway/scratchpad", "sway/mode" ],
+    "modules-left": [ "sway/workspaces", "sway/scratchpad", "sway/mode" ],
     "modules-center": [ "clock" ],
     "modules-right": [
+        "tray",
         "network",
         "backlight",
         "pulseaudio",
@@ -20,11 +21,11 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": true,
-        "on-click": "kitty btop"
+        "on-click": "alacritty -e btop"
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "kitty btop",
+        "on-click": "alacritty -e btop",
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",

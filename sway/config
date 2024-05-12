@@ -20,11 +20,8 @@ set $lock swaylock -f -c 550000
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * {
-    bg ~/.config/sway/wallpapers/Rainnight.jpg fill
-    resolution 1366x768@60Hz position 1366,0
-    scale 1
-}
+output * bg ~/.config/sway/wallpapers/Rainnight.jpg fill
+
 
 ### Idle configuration
 #
@@ -46,7 +43,7 @@ input "type:touchpad" {
     middle_emulation enabled
 }
 
-input "type:keyboard" repeat_delay 300
+input "type:keyboard" repeat_delay 350
 
 ### Key bindings
 #
@@ -221,13 +218,13 @@ exec /usr/bin/xsettingsd &
 # Theming:
 #
 set $gnome-schema org.gnome.desktop.interface
+set $default-app org.cinammon.desktop.default-applications
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Mauve-Cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
     gsettings set $gnome-schema scaling-factor 87040
-    gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 }
 
 seat seat0 xcursor_theme Catppuccin-Mocha-Mauve-Cursors 28

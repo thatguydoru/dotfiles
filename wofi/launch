@@ -1,7 +1,4 @@
 show=drun
-allow_images=true
-width=20%
-location=1
 insensitive=true
-prompt=
-term=kitty
+prompt=search...
+term=alacritty

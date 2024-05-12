@@ -14,13 +14,11 @@ lsp.on_attach(function(_, bufnr)
   end, opts)
 end)
 
-local servers = { 'clangd', 'hls', 'ocamllsp' }
+local servers = { 'clangd', 'ocamllsp', 'gdscript', 'gleam' }
 local mason_servers = require('mason-lspconfig').get_installed_servers()
 for _, s in ipairs(mason_servers) do
   table.insert(servers, s)
 end
-
-lsp.setup_servers(servers)
 
 lsp.configure('rust_analyzer', {
   settings = {
@@ -30,7 +28,30 @@ lsp.configure('rust_analyzer', {
   },
 })
 
-lsp.nvim_workspace()
+local mason_registry= require('mason-registry')
+local vuels_package = mason_registry.get_package('vue-language-server')
+local vuels_path = vuels_package:get_install_path() .. '/node_modules/@vue/language-server'
+
+lsp.configure('tsserver', {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vuels_path,
+        languages = { 'vue' },
+      },
+    },
+  },
+  filetypes = {
+    'typescript',
+    'javascript',
+    'javascriptreact',
+    'typescriptreact',
+    'vue',
+  },
+})
+
+lsp.setup_servers(servers)
 lsp.setup()
 
 vim.diagnostic.config({

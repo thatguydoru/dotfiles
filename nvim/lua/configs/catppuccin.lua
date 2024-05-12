@@ -1,5 +1,3 @@
-require('catppuccin').setup({
-  transparent_background = true,
-})
+require('catppuccin').setup({})
 
 vim.cmd.colorscheme('catppuccin')
