@@ -1,4 +1,4 @@
 show=drun
 insensitive=true
 prompt=search...
-term=alacritty
+term=kitty
