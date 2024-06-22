@@ -1,7 +1,10 @@
+-- globals
+vim.g.zig_fmt_autosave = 0
+
 local options = {
   -- indent and wrap
   shiftwidth = 4,
-  expandtab = true,
+  expandtab = false,
   tabstop = 4,
   smartindent = true,
   wrap = false,
@@ -41,8 +44,9 @@ local options = {
   completeopt = 'noselect,noinsert,menu,menuone',
 }
 
+
 for k, v in pairs(options) do
-  vim.o[k] = v
+  vim.opt[k] = v
 end
 
 vim.opt.listchars:append "tab:   "

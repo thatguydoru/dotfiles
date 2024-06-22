@@ -34,12 +34,7 @@ config.keys = {
   },
 }
 
-config.window_padding = {
-  left = 4,
-  right = 4,
-  top = 8,
-  bottom = 0,
-}
+config.window_padding = { bottom = 0 }
 
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false

@@ -220,14 +220,14 @@ exec /usr/bin/xsettingsd &
 set $gnome-schema org.gnome.desktop.interface
 set $default-app org.cinammon.desktop.default-applications
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Lavender-Dark'
+    gsettings set $gnome-schema gtk-theme 'catppuccin-mocha-lavender-standard+default'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Mauve-Cursors'
+    gsettings set $gnome-schema cursor-theme 'catppuccin-mocha-mauve-cursors'
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
     gsettings set $gnome-schema scaling-factor 87040
 }
 
-seat seat0 xcursor_theme Catppuccin-Mocha-Mauve-Cursors 28
+seat seat0 xcursor_theme catppuccin-mocha-mauve-cursors 28
 
 #
 # Border:
@@ -279,7 +279,8 @@ client.background        $base
 #
 # Window Rules:
 #
-for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px, border pixel 2
+# for_window [app_id="imv"] floating enable, resize set width 600 px height 380 px, border pixel 2
+for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 500 px height 280 px, move position 850 px 405 px
 for_window [app_id="firefox" title="Library"] floating enable
 for_window [app_id="firefox" title="Sharing Indicator"] floating enable, move position 1275 px 680 px

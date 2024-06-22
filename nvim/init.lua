@@ -1,16 +1,14 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 local modules = {
+  'options',
   'plugins',
   'configs',
-  'options',
   'keymaps',
   'autocmds',
 }
 
 for _, m in ipairs(modules) do
-  if not pcall(require, m) then
-    print('[ERR] Failed to load module: ' .. m)
+  local success, err = pcall(require, m)
+  if not success then
+    print('[ERR] Failed to load module ' .. m .. 'due to: ' .. err)
   end
 end

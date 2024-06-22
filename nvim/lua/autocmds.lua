@@ -8,31 +8,26 @@ vim.cmd([[au BufWritePre * :%s/\s\+$//e]])
 -- don't auto comment on new lines
 vim.cmd([[au BufEnter * set fo-=c fo-=o]])
 
-autocmd('FileType', {
-  group = augroup('double_space'),
-  pattern = { 'markdown', 'ocaml', 'lua', 'vue' },
-  callback = function()
-    vim.opt.shiftwidth = 2
-    vim.opt.expandtab = true
-    vim.opt.tabstop = 2
-    vim.opt.smartindent = true
-    vim.opt.wrap = false
-  end
-})
-
+local filetypedetect = augroup('filetypedetect')
 autocmd({ 'BufNewFile', 'BufRead' }, {
-  group = augroup('wgsl'),
+  group = filetypedetect,
   pattern = { '*.wgsl' },
   callback = function()
     vim.opt.filetype = 'wgsl'
   end
 })
-
 autocmd({ 'BufNewFile', 'BufRead' }, {
-  group = augroup('typst'),
+  group = filetypedetect,
   pattern = { '*.typ' },
   callback = function()
     vim.opt.filetype = 'typst'
+  end
+})
+autocmd({ 'BufNewFile', 'BufRead' }, {
+  group = filetypedetect,
+  pattern = { '*.kage' },
+  callback = function()
+    vim.opt.filetype = 'kage'
   end
 })
 
