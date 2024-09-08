@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 
+config.adjust_window_size_when_changing_font_size = false
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font({
   family = "Iosevka Term Nerd Font",
@@ -34,7 +35,7 @@ config.keys = {
   },
 }
 
-config.window_padding = { bottom = 0 }
+config.window_padding = { bottom = 4 }
 
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false

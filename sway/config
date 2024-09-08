@@ -237,8 +237,8 @@ titlebar_padding 4 4
 default_border pixel 2
 default_floating_border pixel 2
 smart_borders on
-smart_gaps on
-gaps inner 8
+# smart_gaps on
+# gaps inner 8
 font JetBrainsMono Nerd Font 8
 
 # Catppuccin: https://github.com/catppuccin/i3
