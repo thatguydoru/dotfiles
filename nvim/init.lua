@@ -136,7 +136,7 @@ require("lazy").setup({
 })
 
 -- Plugin Configs --
-keymap('n', '<leader>l', '<cmd>Lazy<cr>', keymap_opts)
+keymap("n", "<leader>l", "<cmd>Lazy<cr>", keymap_opts)
 
 require("catppuccin").setup({
 	flavor = "mocha",
@@ -213,12 +213,12 @@ telescope.setup({
 	},
 })
 telescope.load_extension("fzf")
-keymap('n', '<leader>ff', telescope_builtin.find_files, keymap_opts)
-keymap('n', '<leader>fg', telescope_builtin.live_grep, keymap_opts)
-keymap('n', '<leader>fb', telescope_builtin.buffers, keymap_opts)
-keymap('n', '<leader>fh', telescope_builtin.help_tags, keymap_opts)
-keymap('n', '<leader>fd', telescope_builtin.diagnostics, keymap_opts)
-keymap('n', '<leader>fa', telescope_builtin.builtin, keymap_opts)
+keymap("n", "<leader>ff", telescope_builtin.find_files, keymap_opts)
+keymap("n", "<leader>fg", telescope_builtin.live_grep, keymap_opts)
+keymap("n", "<leader>fb", telescope_builtin.buffers, keymap_opts)
+keymap("n", "<leader>fh", telescope_builtin.help_tags, keymap_opts)
+keymap("n", "<leader>fd", telescope_builtin.diagnostics, keymap_opts)
+keymap("n", "<leader>fa", telescope_builtin.builtin, keymap_opts)
 
 require("nvim-tree").setup({
 	view = {
@@ -351,7 +351,6 @@ cmp.setup({
 })
 
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function lsp_on_attach(_, bufnr)
 	local function lsp_keymap(mode, l, r)
@@ -368,55 +367,67 @@ local function lsp_on_attach(_, bufnr)
 	lsp_keymap("n", "gq", "vim.lsp.buf.format({ async = false, timeout_ms = 10000 })")
 	lsp_keymap("n", "<F2>", "vim.lsp.buf.rename()")
 	lsp_keymap("n", "<F4>", "vim.lsp.buf.code_action()")
-
 	lsp_keymap("n", "gl", "vim.diagnostic.open_float()")
+end
+
+local function lsp_with_defaults(additional)
+	local defaults = {
+		capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		on_attach = lsp_on_attach,
+	}
+	return vim.tbl_extend("force", defaults, additional or {})
 end
 
 local sys_servers = { "clangd", "ocamllsp", "gdscript", "gopls" }
 for _, server in ipairs(sys_servers) do
-	lspconfig[server].setup({
-		capabilities = capabilities,
-		on_attach = lsp_on_attach,
-	})
+	lspconfig[server].setup(lsp_with_defaults())
 end
 
-lspconfig.rust_analyzer.setup({
-	capabilities = capabilities,
-	on_attach = lsp_on_attach,
+lspconfig.rust_analyzer.setup(lsp_with_defaults({
 	settings = {
-		['rust-analyzer'] = {
-			checkOnSave = { command = 'clippy' }
+		["rust-analyzer"] = {
+			checkOnSave = { command = "clippy" }
 		},
 	},
-})
+}))
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	handlers = {
 		function(server_name)
-			lspconfig[server_name].setup({
-				on_attach = lsp_on_attach,
-				capabilities = capabilities,
-			})
+			lspconfig[server_name].setup(lsp_with_defaults())
 		end,
 
 		ts_ls = function()
-			local vuels_package = require('mason-registry').get_package('vue-language-server')
-			local vuels_path = vuels_package:get_install_path() .. '/node_modules/@vue/language-server'
+			local vuels_package = require("mason-registry").get_package("vue-language-server")
+			local vuels_path = vuels_package:get_install_path() .. "/node_modules/@vue/language-server"
 
-			lspconfig.ts_ls.setup({
+			lspconfig.ts_ls.setup(lsp_with_defaults({
 				init_options = {
 					plugins = {
 						{
-							name = '@vue/typescript-plugin',
+							name = "@vue/typescript-plugin",
 							location = vuels_path,
-							languages = { 'vue', 'javascript', 'typescript' },
+							languages = { "vue", "javascript", "typescript" },
 						},
 					},
 				},
-				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-			})
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			}))
 		end,
+
+		texlab = function()
+			lspconfig.texlab.setup(lsp_with_defaults({
+				settings = {
+					texlab = {
+						build = {
+							executable = 'tectonic',
+							args = { "%f" },
+						},
+					},
+				},
+			}))
+		end
 	},
 })
 
