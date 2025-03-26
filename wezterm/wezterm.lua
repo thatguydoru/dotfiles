@@ -39,7 +39,7 @@ config.keys = {
 	},
 }
 config.window_padding = { bottom = 1 }
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
 wezterm.on("format-tab-title", function(tab)
