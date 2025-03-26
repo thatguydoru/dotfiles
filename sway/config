@@ -20,7 +20,10 @@ set $lock swaylock -f -c 550000
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/sway/wallpapers/Rainnight.jpg fill
+output * {
+    bg ~/.config/sway/wallpapers/Rainnight.jpg fill
+    scale_filter linear
+}
 
 
 ### Idle configuration
@@ -207,7 +210,7 @@ bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $format
 bar swaybar_command waybar
 
 #
-# Daemons
+# Daemons and actions
 #
 exec mako
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -217,17 +220,20 @@ exec /usr/bin/xsettingsd &
 #
 # Theming:
 #
+set $cursor_theme 'catppuccin-mocha-mauve-cursors'
+set $cursor_size 24
 set $gnome-schema org.gnome.desktop.interface
-# set $default-app org.cinammon.desktop.default-applications
 exec_always {
     gsettings set $gnome-schema gtk-theme 'catppuccin-mocha-lavender-standard+default'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'catppuccin-mocha-mauve-cursors'
+    gsettings set $gnome-schema cursor-theme $cursor_theme
+    gsettings set $gnome-schema cursor-size $cursor_size
     gsettings set $gnome-schema font-name 'NotoSans Nerd Font 9'
-    gsettings set $gnome-schema scaling-factor 87040
+    # gsettings set $gnome-schema scaling-factor 87040
+    gsettings set org.cinnamon.desktop.default-applications.terminal exec open-wezterm-here
 }
 
-seat seat0 xcursor_theme catppuccin-mocha-mauve-cursors 28
+seat seat0 xcursor_theme $cursor_theme $cursor_size
 
 #
 # Border:
@@ -239,7 +245,7 @@ default_floating_border pixel 2
 smart_borders on
 # smart_gaps on
 # gaps inner 8
-font JetBrainsMono Nerd Font 8
+font NotoSans Nerd Font 8
 
 # Catppuccin: https://github.com/catppuccin/i3
 set $rosewater #f5e0dc

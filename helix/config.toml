@@ -2,22 +2,17 @@ theme = "catppuccin_mocha"
 
 [editor]
 scrolloff = 8
-mouse = false
 line-number = "relative"
 true-color = true
+auto-completion = false
 color-modes = true
-cursorline = true
-
-[editor.lsp]
-display-messages = true
+end-of-line-diagnostics = "hint"
+popup-border = "all"
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
-[editor.whitespace.render]
-newline = "all"
-
-[editor.indent-guides]
-render = true
+[editor.inline-diagnostics]
+cursor-line = "error"

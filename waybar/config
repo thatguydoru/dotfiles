@@ -1,11 +1,12 @@
 {
-    "layer": "top",
-    "position": "top",
+    "layer": "bottom",
+    "position": "bottom",
     "spacing": 4,
     "modules-left": [ "sway/workspaces", "sway/scratchpad", "sway/mode" ],
-    "modules-center": [ "clock" ],
+    "modules-center": ["sway/window"],
     "modules-right": [
         "tray",
+		"clock",
         "network",
         "backlight",
         "pulseaudio",
