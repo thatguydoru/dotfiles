@@ -1,6 +1,5 @@
 font=Jetbrains Mono 9
 button-border-size=2
-button-padding=100
 
 [powerctl]
 edge=bottom
