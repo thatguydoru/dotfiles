@@ -1,1 +1,3 @@
-../../../.config/swaylock/config
+ignore-empty-password
+no-unlock-indicator
+image=~/.config/sway/glade.png

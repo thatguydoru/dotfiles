@@ -1,1 +1,11 @@
-../../../.config/helix/languages.toml
+[[language]]
+name = "css"
+auto-format = false
+
+[[ language ]]
+name = "scss"
+auto-format = false
+
+[[ language ]]
+name = "html"
+auto-format = false

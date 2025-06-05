@@ -1,1 +1,138 @@
-../../../.config/waybar/style.css
+/* ------------------------------------------------------------------------- 
+  colorscheme: "Gruvbox dark, soft"                                             
+  from author: "Dawid Kurek (dawikur@gmail.com),
+    morhetz (https://github.com/morhetz/gruvbox)"                           
+*/
+
+/* # ---- */
+@define-color base00 #32302f;
+/* # --- */
+@define-color base01 #3c3836;
+/* # -- */
+@define-color base02 #504945;
+/* # - */
+@define-color base03 #665c54;
+/* # + */
+@define-color base04 #bdae93;
+/* # ++ */
+@define-color base05 #d5c4a1;
+/* # +++ */
+@define-color base06 #ebdbb2;
+/* # ++++ */
+@define-color base07 #fbf1c7;
+/* # red */
+@define-color base08 #fb4934;
+/* # orange */
+@define-color base09 #fe8019;
+/* # yellow */
+@define-color base0A #fabd2f;
+/* # green */
+@define-color base0B #b8bb26;
+/* # aqua/cyan */
+@define-color base0C #8ec07c;
+/* # blue */
+@define-color base0D #83a598;
+/* # purple */
+@define-color base0E #d3869b;
+/* # brown */
+@define-color base0F #d65d0e;
+
+/* ------------------------------------------------------------------------- */
+
+* {
+  font-family: Jetbrains Mono Medium, Roboto, sans-serif;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  text-shadow: none;
+  color: inherit;
+  background: transparent;
+  transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#waybar {
+  border-top: 2px solid @base07;
+  background: @base00;
+}
+
+#waybar>* {
+  margin-top: 6px;
+  transition: all 0.25s;
+}
+
+.modules-left {
+  margin-left: 4px;
+}
+
+.modules-right {
+  margin-right: 4px;
+}
+
+button,
+.modules-left>*>label.module,
+.modules-center>*>label.module,
+.modules-right>*>label.module,
+.modules-left>*>box:not(.module) label.module,
+.modules-center>*>box:not(.module) label.module, 
+.modules-right>*>box:not(.module) label.module {
+  padding: 0 4px;
+}
+
+.modules-left>*>label.module,
+.modules-center>*>label.module,
+.modules-right>*>label.module,
+.modules-left>*>box:not(.module) label.module,
+.modules-center>*>box:not(.module) label.module,
+.modules-right>*>box:not(.module) label.module {
+  background: @base0C;
+  color: @base00;
+}
+
+tooltip {
+  background: @base00;
+  color: @base07;
+  border: 2px solid @base07;
+  border-bottom: none;
+}
+
+button,
+#pulseaudio.source.source-muted,
+#pulseaudio.sink.muted {
+  background: @base02;
+  color: @base06;
+}
+
+button.focused {
+  background: @base0C;
+  color: @base00;
+}
+
+button:not(.focused):hover {
+  background: @base03;
+  color: @base07;
+}
+
+#workspaces button.urgent {
+  background: @base0F;
+}
+
+#workspaces button,
+#pulseaudio.source.source-muted,
+#pulseaudio.sink.muted {
+  padding: 0 12px;
+}
+
+#battery.charging {
+  background: @base0D;
+}
+
+#battery.discharging.warning {
+  background: @base0A;
+}
+
+#battery.discharging.critical {
+  background: @base08;
+}

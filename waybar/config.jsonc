@@ -1,1 +1,125 @@
-../../../.config/waybar/config.jsonc
+// -*- mode: jsonc -*-
+{
+    "position": "bottom",
+    "spacing": 4,
+    "height": 25,
+    "reload_style_on_change": false, // only true when changing styles
+    "modules-left": [
+        "group/powerctl",
+        "backlight",
+        "pulseaudio#sink",
+        "pulseaudio#source",
+        "network",
+        "tray"
+    ],
+    "modules-center": [
+        "sway/mode",
+        "sway/scratchpad",
+        "sway/workspaces"
+    ],
+    "modules-right": [
+        "group/hardware",
+        "group/battery-info",
+        "clock"
+    ],
+    "sway/mode": {
+        "tooltip": false
+    },
+    "sway/scratchpad": {
+        "format": "{count} {icon}",
+        "format-icons": "󱟱"
+    },
+    "network": {
+        "format-wifi": "{essid} {signalStrength}% ",
+        "format-ethernet":"{ipaddr}/{cidr} ", 
+        "format-disconnected": "󰲛",
+        "tooltip-format-wifi": "{bandwidthDownBits}  {bandwidthUpBits}  ",
+        "tooltip-format-ethernet": "{bandwidthDownBits}  {bandwidthUpBits}  ",
+        "tooltip-disconnected": "Net disconnected",
+        "interval": 20
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+        "tooltip": false
+    },
+    "pulseaudio#sink": {
+        "format": "{volume}% {icon}",
+        "format-icons": {
+            "headphone": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "format-muted": "󰝟",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",   
+        "format-source": "{volume}% 󰍬",
+        "format-source-muted": "󰍭",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+"
+    },
+    "memory": {
+        "format": "{percentage}% {icon}",
+        "format-icons": "󰌨"
+    },
+    "cpu": {
+        "format": "{usage}% {icon}",
+        "format-icons": "󰍛"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄", 
+        "states": { "warning": 30, "critical": 15 },
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "clock": {
+        "format": "{:%H:%M:%S %a %Y-%m-%d}",
+        "tooltip": false,
+        "interval": 1
+    },
+    "group/battery-info": {
+        "orientation": "horizontal",
+        "modules": ["battery", "custom/powersave"]
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["memory", "cpu"]
+    },
+    "group/powerctl": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/power",
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot",
+        ]
+    },
+    "custom/powersave": {
+        "exec": "~/.config/scripts/get_powergov",
+        "interval": 2,
+        "hide-empty-text": true,
+        "tooltip": true
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "~/.config/scripts/powerctl session-exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "~/.config/scripts/powerctl lock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "~/.config/scripts/powerctl reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/scripts/powerctl shutdown"
+    }
+}

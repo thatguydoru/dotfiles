@@ -1,1 +1,10 @@
-../../../.config/scripts/lockit
+#! /usr/bin/bash
+
+if [[ $1 == 'now' ]]; then
+    swaylock -f
+elif [[ -z $1 ]]; then
+    swayidle -w \
+        timeout 300 'swaylock -f' \
+        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        before-sleep 'swaylock -f'
+fi
