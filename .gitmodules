@@ -1,9 +1,0 @@
-[submodule "alacritty/catppuccin"]
-	path = alacritty/catppuccin
-	url = https://github.com/catppuccin/alacritty.git
-[submodule "waybar/catppuccin/waybar"]
-	path = waybar/catppuccin/waybar
-	url = https://github.com/catppuccin/waybar.git
-[submodule "btop/catppuccin/btop"]
-	path = btop/catppuccin/btop
-	url = https://github.com/catppuccin/btop.git
