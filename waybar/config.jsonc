@@ -104,22 +104,26 @@
     },
     "custom/quit": {
         "format": "󰗼",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Exit Wayland",
         "on-click": "~/.config/scripts/powerctl session-exit"
     },
     "custom/lock": {
         "format": "󰍁",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Lock screen",
         "on-click": "~/.config/scripts/powerctl lock"
     },
     "custom/reboot": {
         "format": "󰜉",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Reboot",
         "on-click": "~/.config/scripts/powerctl reboot"
     },
     "custom/power": {
         "format": "",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Shutdown",
         "on-click": "~/.config/scripts/powerctl shutdown"
     }
 }

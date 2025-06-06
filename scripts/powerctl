@@ -11,6 +11,6 @@ case $1 in
         swaynag -t powerctl -m 'Exit Wayland session?' -B 'Yes' 'swaymsg exit'
     ;;
     'lock')
-        swaylock -f
+        ~/.config/scripts/lockit now
     ;;
 esac
