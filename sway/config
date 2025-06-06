@@ -1,3 +1,5 @@
+include ~/.config/sway/colors
+
 set $mod Mod4
 set $left h
 set $down j
@@ -8,7 +10,8 @@ set $menu wmenu-run
 set $background ~/.config/sway/glade.png
 set $sound_step 1
 set $bright_step 1
-set $screenshot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
+set $shot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
+set $shotcmd ~/.config/scripts/shotit
 
 output * bg $background fill
 
@@ -138,11 +141,11 @@ bindsym --locked Ctrl+F12 exec brightnessctl set $bright_step%+
 # Special keys to adjust volume via Wireplumber
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ $sound_step%+
 bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ $sound_step%-
-bindsym --locked Ctrl+F3 exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $sound_step%+
-bindsym --locked Ctrl+F2 exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $sound_step%-
 bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindsym --locked Ctrl+F1 exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym --locked Ctrl+F3 exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $sound_step%+
+bindsym --locked Ctrl+F2 exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $sound_step%-
+bindsym --locked Ctrl+F4 exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Special keys for media control
 bindsym --locked XF86AudioPlay exec playerctl play-pause
@@ -152,13 +155,12 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioStop exec playerctl stop
 
 # Special key to take a screenshot with grim
-bindsym --locked Print exec grim $screenshot_output_name
-bindsym --locked Ctrl+Shift+s exec grim $screenshot_output_name
-bindsym --locked $mod+Shift+s exec grim -g "$(slurp)" $screenshot_output_name
+bindsym --locked Print exec $shotcmd $shot_output_name
+bindsym --locked XF86Favorites exec $shotcmd $shot_output_name
+bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
 bindsym $mod+Alt+l exec ~/.config/scripts/lockit now
 
-include ~/.config/sway/colors
 client.focused           $base0C $base02 $base07 $base0E $base0C
 client.focused_inactive  $base02 $base00 $base07 $base03 $base03
 client.unfocused         $base02 $base00 $base07 $base03 $base03

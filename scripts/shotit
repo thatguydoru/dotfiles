@@ -1,0 +1,27 @@
+#! /usr/bin/bash
+
+case $2 in
+    'select')
+        dims="$(slurp)"
+        if [[ -z dims ]]; then
+            exit
+        fi
+        grim -g $dims $1
+    ;;
+    '')
+        grim $1
+    ;;
+    *)
+        exit 1
+    ;;
+esac
+
+action=$(
+    notify-send "Screenshot" "Saved as $1" \
+        -u normal -a 'grim' -t 5000 -w \
+        -A "default=$1"
+)
+
+if [[ $action == 'default' ]]; then
+    imv $1
+fi

@@ -60,7 +60,6 @@
 
 #waybar>* {
   margin-top: 6px;
-  transition: all 0.25s;
 }
 
 .modules-left {
@@ -71,22 +70,11 @@
   margin-right: 4px;
 }
 
-button,
-.modules-left>*>label.module,
-.modules-center>*>label.module,
-.modules-right>*>label.module,
-.modules-left>*>box:not(.module) label.module,
-.modules-center>*>box:not(.module) label.module, 
-.modules-right>*>box:not(.module) label.module {
+button, label.module {
   padding: 0 4px;
 }
 
-.modules-left>*>label.module,
-.modules-center>*>label.module,
-.modules-right>*>label.module,
-.modules-left>*>box:not(.module) label.module,
-.modules-center>*>box:not(.module) label.module,
-.modules-right>*>box:not(.module) label.module {
+label.module {  
   background: @base0C;
   color: @base00;
 }
