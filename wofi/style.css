@@ -49,11 +49,12 @@
 }
 
 #outer-box {
-  border: 2px solid @base0C;
+  border: 1px solid @base0C;
   background: @base00;
 }
 
 #entry {
+  transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
   background: @base02;
 }
 
@@ -61,10 +62,21 @@
   background: @base0C;
 }
 
+#entry:selected #expander-box #entry:selected #text,
 #entry:selected #text {
   color: @base00;
 }
 
+#entry:selected #expander-box #text {
+  color: @base07;
+}
+
 #input {
   border-bottom: 2px solid @base03;
+}
+
+#text {
+  padding-bottom: 2px;
+  padding-top: 2px;
+  color: @base07;
 }
