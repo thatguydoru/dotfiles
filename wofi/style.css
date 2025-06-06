@@ -42,80 +42,29 @@
 * {
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;
   font-size: 12px;
-  border-radius: 0;
-}
-
-#waybar {
-  border-top: 2px solid @base07;
-  background: @base00;
-}
-
-#waybar>* {
-  margin-top: 6px;
-}
-
-.modules-left {
-  margin-left: 4px;
-}
-
-.modules-right {
-  margin-right: 4px;
-}
-
-button, label.module {
-  text-shadow: none;
   border: none;
-  padding: 0 4px;
-  transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background: transparent;
+  box-shadow: none;
+  color: @base07;
 }
 
-label.module {  
-  background: @base0C;
-  color: @base00;
-}
-
-tooltip {
+#outer-box {
+  border: 2px solid @base0C;
   background: @base00;
-  color: @base07;
-  border: 2px solid @base07;
-  border-bottom: none;
 }
 
-button,
-#pulseaudio.source.source-muted,
-#pulseaudio.sink.muted {
+#entry {
   background: @base02;
-  color: @base06;
 }
 
-button.focused {
+#entry:selected {
   background: @base0C;
+}
+
+#entry:selected #text {
   color: @base00;
 }
 
-button:not(.focused):hover {
-  background: @base03;
-  color: @base07;
-}
-
-#workspaces button.urgent {
-  background: @base0F;
-}
-
-#workspaces button,
-#pulseaudio.source.source-muted,
-#pulseaudio.sink.muted {
-  padding: 0 12px;
-}
-
-#battery.charging {
-  background: @base0D;
-}
-
-#battery.discharging.warning {
-  background: @base0A;
-}
-
-#battery.discharging.critical {
-  background: @base08;
+#input {
+  border-bottom: 2px solid @base03;
 }

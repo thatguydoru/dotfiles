@@ -6,6 +6,7 @@ if [[ $1 == 'now' ]]; then
 elif [[ -z $1 ]]; then
     swayidle -w \
         timeout 300 'playerctl pause && swaylock -f' \
-        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        timeout 600 'swaymsg "output * power off"' \
+            resume 'swaymsg "output * power on"' \
         before-sleep 'swaylock -f'
 fi

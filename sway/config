@@ -6,14 +6,17 @@ set $down j
 set $up k
 set $right l
 set $term wezterm
-set $menu wmenu-run
+set $menu [[ -z $(pgrep wofi) ]] && wofi -i -p 'App name...' --show=drun
 set $background ~/.config/sway/glade.png
 set $sound_step 1
 set $bright_step 1
 set $shot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
 set $shotcmd ~/.config/scripts/shotit
 
-output * bg $background fill
+output 'eDP-1' {
+    bg $background fill
+    scale_filter linear
+}
 
 input 'type:touchpad' {
     dwt enabled
@@ -21,11 +24,12 @@ input 'type:touchpad' {
     natural_scroll enabled
     middle_emulation enabled
 }
+
 input 'type:keyboard' repeat_delay 350
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec ~/.config/scripts/runique $menu
+bindsym $mod+d exec $menu
 
 # Move floating windows with Mod + left mouse button
 floating_modifier $mod normal
@@ -175,6 +179,6 @@ exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec ~/.config/scripts/lockit
 
-exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.88
+exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
 
 include /etc/sway/config.d/*
