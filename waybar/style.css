@@ -50,7 +50,6 @@
   text-shadow: none;
   color: inherit;
   background: transparent;
-  transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #waybar {
@@ -72,6 +71,7 @@
 
 button, label.module {
   padding: 0 4px;
+  transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 label.module {  

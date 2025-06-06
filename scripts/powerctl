@@ -8,7 +8,7 @@ case $1 in
         swaynag -t powerctl -m 'Reboot now?' -B 'Yes' 'reboot'
     ;;
     'session-exit')
-        swaynag -t powerctl -m 'Exit Sway session?' -B 'Yes' 'swaymsg exit'
+        swaynag -t powerctl -m 'Exit Wayland session?' -B 'Yes' 'swaymsg exit'
     ;;
     'lock')
         swaylock -f
