@@ -62,14 +62,16 @@
   margin-right: 4px;
 }
 
-button, label.module {
+button,
+label.module,
+#tray {
   text-shadow: none;
   border: none;
   padding: 0 4px;
   transition: background 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-label.module {  
+label.module {
   background: @base0C;
   color: @base00;
 }

@@ -30,6 +30,9 @@
         "format": "{count} {icon}",
         "format-icons": "󱟱"
     },
+    "tray": {
+        "spacing": 4   
+    },
     "network": {
         "format-wifi": "{essid} {signalStrength}% ",
         "format-ethernet":"{ipaddr}/{cidr} ", 
