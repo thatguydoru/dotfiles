@@ -10,7 +10,7 @@ no_quotes() {
     echo $(echo -n $1 | sed "s/'//g")
 }
 
-eval_power_cmd() {
+toggle_nag() {
     local cmd_cleaned=$(no_quotes "$1")
     local proc=$(pgrep -f "$cmd_cleaned")
 
@@ -27,13 +27,13 @@ eval_power_cmd() {
 
 case $1 in
     'shutdown')
-        eval_power_cmd "$shutdown_cmd" "$reboot_cmd" "$session_exit_cmd"
+        toggle_nag "$shutdown_cmd" "$reboot_cmd" "$session_exit_cmd"
     ;;
     'reboot')
-        eval_power_cmd "$reboot_cmd" "$shutdown_cmd" "$session_exit_cmd"
+        toggle_nag "$reboot_cmd" "$shutdown_cmd" "$session_exit_cmd"
     ;;
     'session-exit')
-        eval_power_cmd "$session_exit_cmd" "$shutdown_cmd" "$reboot_cmd"
+        toggle_nag "$session_exit_cmd" "$shutdown_cmd" "$reboot_cmd"
     ;;
     'lock')
         ~/.config/scripts/lockit
