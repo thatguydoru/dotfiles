@@ -187,4 +187,7 @@ exec swayidle -w \
 
 exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
 
+for_window [shell="xwayland"] title_format "[xwayland] %title"
+for_window [title="Picture-in-Picture"] floating enable, sticky enable
+
 include /etc/sway/config.d/*

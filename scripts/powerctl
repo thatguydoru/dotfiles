@@ -36,6 +36,6 @@ case $1 in
         eval_power_cmd "$session_exit_cmd" "$shutdown_cmd" "$reboot_cmd"
     ;;
     'lock')
-        ~/.config/scripts/lockit now
+        ~/.config/scripts/lockit
     ;;
 esac
