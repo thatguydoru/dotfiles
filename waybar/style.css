@@ -103,6 +103,7 @@ button:not(.focused):hover {
 }
 
 #workspaces button,
+#custom-appmenu,
 #pulseaudio.source.source-muted,
 #pulseaudio.sink.muted {
   padding: 0 12px;

@@ -6,12 +6,13 @@ set $down j
 set $up k
 set $right l
 set $term wezterm
-set $menu [[ -z $(pgrep wofi) ]] && wofi -i -p 'App name...' --show=drun
+set $menu ~/.config/scripts/appmenu
 set $background ~/.config/sway/glade.png
 set $sound_step 1
 set $bright_step 1
 set $shot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
 set $shotcmd ~/.config/scripts/shotit
+set $lockcmd ~/.config/scripts/lockit
 
 output 'eDP-1' {
     bg $background fill
@@ -163,7 +164,7 @@ bindsym --locked Print exec $shotcmd $shot_output_name
 bindsym --locked XF86Favorites exec $shotcmd $shot_output_name
 bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
-bindsym $mod+Alt+l exec ~/.config/scripts/lockit now
+bindsym $mod+Alt+l exec $lockcmd
 
 client.focused           $base0C $base02 $base07 $base0E $base0C
 client.focused_inactive  $base02 $base00 $base07 $base03 $base03
@@ -178,6 +179,11 @@ bar swaybar_command waybar
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec ~/.config/scripts/lockit
+
+exec swayidle -w \
+    timeout 300 "'$lockcmd'" \
+    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
 
 exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
 

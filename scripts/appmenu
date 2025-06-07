@@ -1,0 +1,5 @@
+#! /usr/bin/bash
+ 
+sleep 0.1
+
+[[ -z $(pgrep -f wofi) ]] && wofi -i -I -l 7 -w 25% -p 'App name...' --show=drun

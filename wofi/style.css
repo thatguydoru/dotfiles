@@ -43,13 +43,16 @@
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;
   font-size: 12px;
   border: none;
+  border-radius: 0;
   background: transparent;
   box-shadow: none;
   color: @base07;
 }
 
 #outer-box {
-  border: 1px solid @base0C;
+  padding: 0 10px;
+  border: 2px solid @base07;
+  border-bottom: none;
   background: @base00;
 }
 

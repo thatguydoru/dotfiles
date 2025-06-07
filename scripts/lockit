@@ -1,12 +1,6 @@
 #! /usr/bin/bash
+ 
+sleep 0.1
 
-if [[ $1 == 'now' ]]; then
-    playerctl pause
-    swaylock -f
-elif [[ -z $1 ]]; then
-    swayidle -w \
-        timeout 300 'playerctl pause && swaylock -f' \
-        timeout 600 'swaymsg "output * power off"' \
-            resume 'swaymsg "output * power on"' \
-        before-sleep 'swaylock -f'
-fi
+playerctl pause 2> /dev/null
+swaylock -f
