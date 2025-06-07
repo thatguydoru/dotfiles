@@ -1,14 +1,39 @@
 #! /usr/bin/bash
 
+sleep 0.2  # say no to fast clicks
+
+shutdown_cmd="swaynag -t powerctl -m 'Shutdown now' -B 'Yes' 'shutdown now'"
+reboot_cmd="swaynag -t powerctl -m 'Reboot now' -B 'Yes' 'reboot'"
+session_exit_cmd="swaynag -t powerctl -m 'Exit Wayland session' -B 'Yes' 'swaymsg exit'"
+
+no_quotes() {
+    echo $(echo -n $1 | sed "s/'//g")
+}
+
+eval_power_cmd() {
+    local cmd_cleaned=$(no_quotes "$1")
+    local proc=$(pgrep -f "$cmd_cleaned")
+
+    (( $proc )) && kill $proc && exit 0
+
+    for cmd in "${@:2}"; do
+        cmd_cleaned=$(no_quotes "$cmd")
+        proc=$(pgrep -f "$cmd_cleaned")
+        (( $proc )) && kill $proc
+    done
+
+    eval "$1"
+}
+
 case $1 in
     'shutdown')
-        swaynag -t powerctl -m 'Shutdown now?' -B 'Yes' 'shutdown now'
+        eval_power_cmd "$shutdown_cmd" "$reboot_cmd" "$session_exit_cmd"
     ;;
     'reboot')
-        swaynag -t powerctl -m 'Reboot now?' -B 'Yes' 'reboot'
+        eval_power_cmd "$reboot_cmd" "$shutdown_cmd" "$session_exit_cmd"
     ;;
     'session-exit')
-        swaynag -t powerctl -m 'Exit Wayland session?' -B 'Yes' 'swaymsg exit'
+        eval_power_cmd "$session_exit_cmd" "$shutdown_cmd" "$reboot_cmd"
     ;;
     'lock')
         ~/.config/scripts/lockit now

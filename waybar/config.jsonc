@@ -5,7 +5,7 @@
     "height": 25,
     "reload_style_on_change": false, // only true when changing styles
     "modules-left": [
-        "group/powerctl",
+        "custom/appmenu",
         "backlight",
         "pulseaudio#sink",
         "pulseaudio#source",
@@ -20,7 +20,8 @@
     "modules-right": [
         "group/hardware",
         "group/battery-info",
-        "clock"
+        "clock",
+        "group/powerctl"
     ],
     "sway/mode": {
         "tooltip": false
@@ -70,6 +71,7 @@
     },
     "battery": {
         "format": "{capacity}% {icon}",
+        "interval": 2,
         "format-charging": "{capacity}% 󰂄", 
         "states": { "warning": 30, "critical": 15 },
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -90,40 +92,40 @@
     "group/powerctl": {
         "orientation": "inherit",
         "modules": [
-            "custom/power",
-            "custom/quit",
             "custom/lock",
+            "custom/quit",
             "custom/reboot",
+            "custom/power",
         ]
     },
     "custom/powersave": {
         "exec": "~/.config/scripts/get_powergov",
         "interval": 2,
         "hide-empty-text": true,
-        "tooltip": true
     },
     "custom/quit": {
         "format": "󰗼",
-        "tooltip": true,
         "tooltip-format": "Exit Wayland",
         "on-click": "~/.config/scripts/powerctl session-exit"
     },
     "custom/lock": {
         "format": "󰍁",
-        "tooltip": true,
         "tooltip-format": "Lock screen",
         "on-click": "~/.config/scripts/powerctl lock"
     },
     "custom/reboot": {
         "format": "󰜉",
-        "tooltip": true,
         "tooltip-format": "Reboot",
         "on-click": "~/.config/scripts/powerctl reboot"
     },
     "custom/power": {
         "format": "",
-        "tooltip": true,
         "tooltip-format": "Shutdown",
         "on-click": "~/.config/scripts/powerctl shutdown"
+    },
+    "custom/appmenu": {
+        "format": "󰍜",
+        "tooltip-format": "Apps",
+        "on-click": "~/.config/scripts/appmenu"
     }
 }
