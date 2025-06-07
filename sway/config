@@ -26,7 +26,10 @@ input 'type:touchpad' {
     middle_emulation enabled
 }
 
-input 'type:keyboard' repeat_delay 350
+input 'type:keyboard' {
+    repeat_delay 300 
+    repeat_rate 30
+} 
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
