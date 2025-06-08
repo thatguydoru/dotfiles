@@ -1,14 +1,6 @@
-[language-server.rust-analyzer.config.check]
-command = "clippy"
-
 [[language]]
-name = "css"
-auto-format = false
-
-[[ language ]]
-name = "scss"
-auto-format = false
-
-[[ language ]]
 name = "html"
 auto-format = false
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
