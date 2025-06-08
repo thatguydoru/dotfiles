@@ -10,16 +10,16 @@ config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 
 config.keys = {
-  {
+	{
 		key = "q",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
-		key = "g",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ShowTabNavigator,
-	},
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	}
 }
 
 wezterm.on("format-tab-title", function(tab)
