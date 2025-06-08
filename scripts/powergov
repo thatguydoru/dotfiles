@@ -1,0 +1,26 @@
+#! /usr/bin/bash
+
+gov=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+energy_now=$(cat /sys/class/power_supply/BAT1/energy_now)
+energy_full=$(cat /sys/class/power_supply/BAT1/energy_full)
+class=''
+
+let percent=100*$energy_now/$energy_full
+
+if (( percent <= $1 )) && (( percent > $2 )); then
+    class='warning'
+elif (( percent <= $2 )); then
+    class='critical'
+fi
+
+case $gov in
+    'powersave')
+        echo -e "󰌪\n${gov^}\n${class}"
+    ;;
+    'performance')
+        echo -e "\n${gov^}\n${class}"
+    ;;
+    *)
+        echo -e "$gov\n\n${class}"
+    ;;
+esac
