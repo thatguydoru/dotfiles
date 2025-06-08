@@ -1,5 +1,7 @@
 font=Jetbrains Mono 9
 button-border-size=2
+details-border-size=0
+details-background=#32302f
 
 [powerctl]
 edge=bottom
@@ -15,12 +17,12 @@ text=#32302f
 border=#32302f
 button-background=#fbf1c7
 button-text=#32302f
-border-bottom=fabd2f
+border-bottom=#32302f
 
 [error]
 background=#fb4934
-text=#32302f
+text=#fbf1c7
 border=#32302f
 button-background=#fbf1c7
 button-text=#32302f
-border-bottom=fabd2f
+border-bottom=#32302f
