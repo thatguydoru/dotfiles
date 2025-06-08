@@ -84,12 +84,14 @@ tooltip {
 }
 
 button,
+#idle_inhibitor,
 #pulseaudio.source.source-muted,
 #pulseaudio.sink.muted {
   background: @base02;
   color: @base06;
 }
 
+#idle_inhibitor.activated,
 button.focused {
   background: @base0C;
   color: @base00;
@@ -104,8 +106,9 @@ button:not(.focused):hover {
   background: @base0F;
 }
 
-#workspaces button,
 #custom-appmenu,
+#idle_inhibitor,
+#workspaces button,
 #pulseaudio.source.source-muted,
 #pulseaudio.sink.muted {
   padding: 0 12px;
@@ -115,10 +118,12 @@ button:not(.focused):hover {
   background: @base0D;
 }
 
+#custom-powergov.warning,
 #battery.discharging.warning {
   background: @base0A;
 }
 
+#custom-powergov.critical,
 #battery.discharging.critical {
   background: @base08;
 }

@@ -9,6 +9,7 @@
         "backlight",
         "pulseaudio#sink",
         "pulseaudio#source",
+        "idle_inhibitor",
         "network",
         "tray"
     ],
@@ -31,16 +32,23 @@
         "format-icons": "󱟱"
     },
     "tray": {
-        "spacing": 4   
+        "spacing": 4
     },
     "network": {
         "format-wifi": "{essid} {signalStrength}% ",
-        "format-ethernet":"{ipaddr}/{cidr} ", 
+        "format-ethernet":"{ipaddr}/{cidr} ",
         "format-disconnected": "󰲛",
         "tooltip-format-wifi": "{bandwidthDownBits}  {bandwidthUpBits}  ",
         "tooltip-format-ethernet": "{bandwidthDownBits}  {bandwidthUpBits}  ",
         "tooltip-disconnected": "Net disconnected",
         "interval": 20
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "backlight": {
         "format": "{percent}% {icon}",
@@ -57,7 +65,7 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "pulseaudio#source": {
-        "format": "{format_source}",   
+        "format": "{format_source}",
         "format-source": "{volume}% 󰍬",
         "format-source-muted": "󰍭",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
@@ -75,7 +83,7 @@
     "battery": {
         "format": "{capacity}% {icon}",
         "interval": 2,
-        "format-charging": "{capacity}% 󰂄", 
+        "format-charging": "{capacity}% 󰂄",
         "states": { "warning": 30, "critical": 15 },
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
@@ -86,7 +94,7 @@
     },
     "group/battery-info": {
         "orientation": "horizontal",
-        "modules": ["battery", "custom/powersave"]
+        "modules": ["battery", "custom/powergov"]
     },
     "group/hardware": {
         "orientation": "horizontal",
@@ -101,8 +109,8 @@
             "custom/power",
         ]
     },
-    "custom/powersave": {
-        "exec": "~/.config/scripts/get_powergov",
+    "custom/powergov": {
+        "exec": "~/.config/scripts/powergov 30 15",
         "interval": 2,
         "hide-empty-text": true,
     },
