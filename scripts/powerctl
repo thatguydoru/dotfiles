@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-sleep 0.2  # say no to fast clicks
+sleep 0.1  # say no to fast clicks
 
 shutdown_cmd="swaynag -t powerctl -m 'Shutdown now' -B 'Yes' 'shutdown now'"
 reboot_cmd="swaynag -t powerctl -m 'Reboot now' -B 'Yes' 'reboot'"

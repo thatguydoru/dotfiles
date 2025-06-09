@@ -164,7 +164,7 @@ bindsym --locked XF86AudioStop exec playerctl stop
 
 # Special key to take a screenshot with grim
 bindsym --locked Print exec $shotcmd $shot_output_name
-bindsym --locked XF86Favorites exec $shotcmd $shot_output_name
+bindsym --locked F12 exec $shotcmd $shot_output_name
 bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
 bindsym $mod+Alt+l exec $lockcmd

@@ -82,7 +82,7 @@
     },
     "battery": {
         "format": "{capacity}% {icon}",
-        "interval": 2,
+        "interval": 5,
         "format-charging": "{capacity}% 󰂄",
         "states": { "warning": 30, "critical": 15 },
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -111,7 +111,7 @@
     },
     "custom/powergov": {
         "exec": "~/.config/scripts/powergov 30 15",
-        "interval": 2,
+        "interval": 3,
         "hide-empty-text": true,
     },
     "custom/quit": {
