@@ -2,11 +2,6 @@
  
 sleep 0.1
 
-proc=$(pgrep -f wofi)
-
-if (( $proc )); then
-    kill $proc
-    exit 0
-fi
+pkill wofi && exit 0
 
 wofi -i -I -l 7 -w 25% -p 'App name...' --show=drun

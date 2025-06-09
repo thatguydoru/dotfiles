@@ -11,15 +11,10 @@ no_quotes() {
 }
 
 toggle_nag() {
-    local cmd_cleaned=$(no_quotes "$1")
-    local proc=$(pgrep -f "$cmd_cleaned")
-
-    (( $proc )) && kill $proc && exit 0
+    pkill -f -TERM  "$(no_quotes "$1")" && exit 0
 
     for cmd in "${@:2}"; do
-        cmd_cleaned=$(no_quotes "$cmd")
-        proc=$(pgrep -f "$cmd_cleaned")
-        (( $proc )) && kill $proc
+        pkill -f -TERM "$(no_quotes "$cmd")"
     done
 
     eval "$1"
