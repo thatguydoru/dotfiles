@@ -1,21 +1,30 @@
 #! /usr/bin/bash
  
-KRIPT_INSTALL_TARGET="$HOME/.local/bin/kript"
+KRIPT_INSTALL_TARGET="$HOME/.local/bin"
 DOTCONFIG_INSTALL_TARGET="$HOME/.config"
 COLORS_INSTALL_TARGETS='./dotconfig/sway/colors ./dotconfig/wofi/colors ./dotconfig/waybar/colors'
+
+ensure_target() {
+    [[ ! -d $1 ]] && mkdir -p $1
+}
  
 install() {
-    ln -srf 'kript' $KRIPT_INSTALL_TARGET
+    ensure_target $KRIPT_INSTALL_TARGET
+    ln -srf 'kript' "$KRIPT_INSTALL_TARGET/kript"
+    echo "Symlinked kript as $KRIPT_INSTALL_TARGET/kript"
     stow -v 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET  
 }
 
-reinstall() {
-    ln -srf 'kript' $KRIPT_INSTALL_TARGET
+refresh() {
+    ensure_target $KRIPT_INSTALL_TARGET
+    ln -srf 'kript' "$KRIPT_INSTALL_TARGET/kript"
+    echo "Symlinked kript as $KRIPT_INSTALL_TARGET/kript"
     stow -vR 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET  
 }
 
 uninstall() {
-   rm $KRIPT_INSTALL_TARGET 
+   rm "$KRIPT_INSTALL_TARGET/kript" 
+   echo "Removed symlink $KRIPT_INSTALL_TARGET/kript"
    stow -vD 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET
 }
 
@@ -29,8 +38,8 @@ case $1 in
     'install')
         install
     ;;
-    'reinstall')
-        reinstall
+    'refresh')
+        refresh
     ;;
     'uninstall')
         uninstall
