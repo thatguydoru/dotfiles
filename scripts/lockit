@@ -1,6 +1,0 @@
-#! /usr/bin/bash
- 
-sleep 0.1
-
-playerctl pause 2> /dev/null
-swaylock -f

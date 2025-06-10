@@ -1,4 +1,4 @@
-include ~/.config/sway/colors
+include ~/.local/share/colors/sway/gruvbox_dark_soft16
 
 set $mod Mod4
 set $left h
@@ -6,13 +6,13 @@ set $down j
 set $up k
 set $right l
 set $term wezterm
-set $menu ~/.config/scripts/appmenu
+set $menu ~/.local/bin/kript appmenu
 set $background ~/.config/sway/glade.png
 set $sound_step 1
 set $bright_step 1
 set $shot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
-set $shotcmd ~/.config/scripts/shotit
-set $lockcmd ~/.config/scripts/lockit
+set $shotcmd ~/.local/bin/kript shoot
+set $lockcmd ~/.local/bin/kript lock
 
 output 'eDP-1' {
     bg $background fill
@@ -164,7 +164,7 @@ bindsym --locked XF86AudioStop exec playerctl stop
 
 # Special key to take a screenshot with grim
 bindsym --locked Print exec $shotcmd $shot_output_name
-bindsym --locked F12 exec $shotcmd $shot_output_name
+bindsym --locked Ctrl+F10 exec $shotcmd $shot_output_name
 bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
 bindsym $mod+Alt+l exec $lockcmd
@@ -185,10 +185,7 @@ exec swayidle -w \
     timeout 300 '$lockcmd' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f'
-
 exec /usr/lib/polkit-kde-authentication-agent-1
-
-# must be executed last
 exec mako
 
 for_window [shell="xwayland"] title_format "[xwayland] %title"

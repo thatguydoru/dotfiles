@@ -1,7 +1,0 @@
-#! /usr/bin/bash
- 
-sleep 0.1
-
-pkill wofi && exit 0
-
-wofi -i -I -l 7 -w 25% -p 'App name...' --show=drun

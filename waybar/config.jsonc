@@ -45,6 +45,8 @@
     },
     "idle_inhibitor": {
         "format": "{icon}",
+        "tooltip-format-activated": "Idle off",
+        "tooltip-format-deactivated": "Idle on",
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -88,9 +90,21 @@
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "clock": {
-        "format": "{:%H:%M:%S %a %Y-%m-%d}",
-        "tooltip": false,
-        "interval": 1
+        "format": "{:%H:%M %a %Y-%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "months":   "<span color='#fbf1c7'>{}</span>",
+                "weekdays": "<span color='#fabd2f'>{}</span>",
+                "days":     "<span color='#fbf1c7'>{}</span>",
+                "today":    "<span color='#d65d0e'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click": "shift_reset",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "group/battery-info": {
         "orientation": "horizontal",
@@ -110,33 +124,33 @@
         ]
     },
     "custom/powergov": {
-        "exec": "~/.config/scripts/powergov 30 15",
+        "exec": "~/.local/bin/kript powergov 30 15",
         "interval": 3,
         "hide-empty-text": true,
     },
     "custom/quit": {
         "format": "󰗼",
         "tooltip-format": "Exit Wayland",
-        "on-click": "~/.config/scripts/powerctl session-exit"
+        "on-click": "~/.local/bin/kript powerctl session-exit"
     },
     "custom/lock": {
         "format": "󰍁",
         "tooltip-format": "Lock screen",
-        "on-click": "~/.config/scripts/powerctl lock"
+        "on-click": "~/.local/bin/kript powerctl lock"
     },
     "custom/reboot": {
         "format": "󰜉",
         "tooltip-format": "Reboot",
-        "on-click": "~/.config/scripts/powerctl reboot"
+        "on-click": "~/.local/bin/kript powerctl reboot"
     },
     "custom/power": {
         "format": "",
         "tooltip-format": "Shutdown",
-        "on-click": "~/.config/scripts/powerctl shutdown"
+        "on-click": "~/.local/bin/kript powerctl shutdown"
     },
     "custom/appmenu": {
         "format": "󰍜",
         "tooltip-format": "Apps",
-        "on-click": "~/.config/scripts/appmenu"
+        "on-click": "~/.local/bin/kript appmenu"
     }
 }
