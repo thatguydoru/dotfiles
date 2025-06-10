@@ -16,11 +16,19 @@ lock() {
 shoot() {
     if [[ $2 == 'select' ]]; then
         local dimensions="$(slurp)"
-        [[ -z $dimensions ]] &&  exit 0
-        grim -g $dimensions $1
+        [[ -z $dimensions ]] && exit 0
+        grim -g "$dimensions" $1
     else
         grim $1
     fi 
+
+    action=$(
+        notify-send "Screenshot" "Saved as $1" \
+            -u normal -a 'grim' -t 5000 -w \
+            -A "default=$1"
+    )
+
+    [[ $action == 'default' ]] && imv $1
 } 
 
 appmenu() {
@@ -94,16 +102,16 @@ case $1 in
         lock
     ;;
     'shoot')
-        shoot $@
+        shoot "${@:2}"
     ;;
     'appmenu')
-        appmenu $@
+        appmenu "${@:2}"
     ;;
     'powergov')
-        powergov $@
+        powergov "${@:2}"
     ;;
     'powerctl')
-        powerctl $@
+        powerctl "${@:2}"
     ;;
     *)
         exit 1

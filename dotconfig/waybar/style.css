@@ -1,4 +1,4 @@
-@import '.local/share/colors/gtk/gruvbox_dark_soft16.scss';
+@import 'gruvbox_dark_soft16/gtk.scss';
 
 * {
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;

@@ -1,4 +1,4 @@
-include ~/.local/share/colors/sway/gruvbox_dark_soft16
+include ~/.config/sway/gruvbox_dark_soft16/swaycolors
 
 set $mod Mod4
 set $left h
@@ -16,7 +16,7 @@ set $lockcmd ~/.local/bin/kript lock
 
 output 'eDP-1' {
     bg $background fill
-    scale_filter linear
+    scale_filter smart
 }
 
 input 'type:touchpad' {
