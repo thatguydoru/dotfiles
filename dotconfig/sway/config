@@ -1,4 +1,4 @@
-include ~/.config/sway/gruvbox_dark_soft16/swaycolors
+include ~/.config/sway/colors/gruvbox_dark_soft16/swaycolors
 
 set $mod Mod4
 set $left h

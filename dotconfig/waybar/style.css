@@ -1,4 +1,4 @@
-@import 'gruvbox_dark_soft16/gtk.scss';
+@import 'colors/gruvbox_dark_soft16/gtk.scss';
 
 * {
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;
@@ -30,7 +30,8 @@ label.module,
   text-shadow: none;
   border: none;
   padding: 0 4px;
-  transition: padding 0.25s ease-out,
+  transition:
+    padding 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
     background-color 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 

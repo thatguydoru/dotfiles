@@ -1,0 +1,43 @@
+#! /usr/bin/bash
+ 
+KRIPT_INSTALL_TARGET="$HOME/.local/bin/kript"
+DOTCONFIG_INSTALL_TARGET="$HOME/.config"
+COLORS_INSTALL_TARGETS='./dotconfig/sway/colors ./dotconfig/wofi/colors ./dotconfig/waybar/colors'
+ 
+install() {
+    ln -srf 'kript' $KRIPT_INSTALL_TARGET
+    stow -v 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET  
+}
+
+reinstall() {
+    ln -srf 'kript' $KRIPT_INSTALL_TARGET
+    stow -vR 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET  
+}
+
+uninstall() {
+   rm $KRIPT_INSTALL_TARGET 
+   stow -vD 'dotconfig' -t $DOTCONFIG_INSTALL_TARGET
+}
+
+refresh_colors() {
+    for t in $COLORS_INSTALL_TARGETS; do
+        stow -vR 'colors' -t $t
+    done    
+}
+
+case $1 in
+    'install')
+        install
+    ;;
+    'reinstall')
+        reinstall
+    ;;
+    'uninstall')
+        uninstall
+    ;;
+    'refresh-colors')
+        refresh_colors
+    ;;
+    *)
+        exit 1
+esac

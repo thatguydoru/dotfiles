@@ -1,4 +1,4 @@
-@import '.config/wofi/gruvbox_dark_soft16/gtk.scss';
+@import '.config/wofi/colors/gruvbox_dark_soft16/gtk.scss';
 
 * {
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;
