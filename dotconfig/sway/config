@@ -12,7 +12,6 @@ set $sound_step 1
 set $bright_step 1
 set $shot_output_name $(xdg-user-dir PICTURES)/$(date +'screenshot-%m%d%y-%Hh%Mm%Ss.png')
 set $shotcmd ~/.local/bin/kript shoot
-set $lockcmd ~/.local/bin/kript lock
 
 output 'eDP-1' {
     bg $background fill
@@ -167,7 +166,7 @@ bindsym --locked Print exec $shotcmd $shot_output_name
 bindsym --locked Ctrl+F10 exec $shotcmd $shot_output_name
 bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
-bindsym $mod+Alt+l exec $lockcmd
+bindsym $mod+Alt+l exec 'playerctl pause 2> /dev/null; swaylock -f'
 
 client.focused           $base0C $base02 $base07 $base0E $base0C
 client.focused_inactive  $base02 $base00 $base07 $base03 $base03
@@ -176,19 +175,21 @@ client.urgent            $base0F $base02 $base07 $base00 $base0F
 
 smart_borders on
 font JetBrains Mono Medium 9
-
+seat seat0 xcursor_theme capitaine-cursors 24
 bar swaybar_command waybar
 
 exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
-
+exec swayidle idlehint 1
 exec swayidle -w \
-    timeout 300 '$lockcmd' \
+    timeout 300 'swaylock -f' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f'
+    before-sleep 'playerctl pause 2> /dev/null; swaylock -f'
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec mako
 
 for_window [shell="xwayland"] title_format "[xwayland] %title"
 for_window [title="Picture-in-Picture"] floating enable, sticky enable
+for_window [window_type="dialog"] floating enable
+for_window [window_role="dialog"] floating enable
 
 include /etc/sway/config.d/*
