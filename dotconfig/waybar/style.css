@@ -74,6 +74,7 @@ button:not(.focused):hover {
   padding: 0 12px;
 }
 
+#custom-powergov.charging,
 #battery.charging {
   background: @base0D;
 }

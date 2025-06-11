@@ -74,6 +74,10 @@
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+"
     },
+    "disk": {
+         "format": "{used}/{total} 󰆦",   
+         "tooltip-format": "{path} has {free} free",
+    },
     "memory": {
         "format": "{percentage}% {icon}",
         "format-icons": "󰌨"
@@ -112,7 +116,7 @@
     },
     "group/hardware": {
         "orientation": "horizontal",
-        "modules": ["memory", "cpu"]
+        "modules": ["disk", "memory", "cpu"]
     },
     "group/powerctl": {
         "orientation": "inherit",
