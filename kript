@@ -4,14 +4,23 @@ no_quotes() {
     echo $(echo -n $1 | sed "s/'//g")
 }
 
+get_battery_info() {
+    upower -i /org/freedesktop/UPower/devices/battery_BAT1
+}
+
+toggle_nag() {
+    pkill -f -TERM  "$(no_quotes "$1")" && exit 0
+
+    for cmd in "${@:2}"; do
+        pkill -f -TERM "$(no_quotes "$cmd")"
+    done
+
+    eval "$1"
+}
+
 # -----------------------------------------------------------------------------
 # Main sub commands
 # -----------------------------------------------------------------------------
-
-lock() {
-    playerctl pause 2> /dev/null
-    swaylock -f
-}
 
 shoot() {
     if [[ $2 == 'select' ]]; then
@@ -28,7 +37,7 @@ shoot() {
             -A "default=$1"
     )
 
-    [[ $action == 'default' ]] && imv $1
+    [[ $action == 'default' ]] && xdg-open $1
 } 
 
 appmenu() {
@@ -38,14 +47,13 @@ appmenu() {
 
 powergov() {
     local gov=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-    local percent=$(
-        upower -i /org/freedesktop/UPower/devices/battery_BAT1 \
-        | grep percentage \
-        | awk '{ printf int($2) }'
-    )
+    local percent=$(get_battery_info | grep 'percentage' | awk '{ printf int($2) }')
+    local charging=$(get_battery_info | grep 'state' | awk '{ print $2 }')
     local class=''
 
-    if (( percent <= $1 )) && (( percent > $2 )); then
+    if [[ $charging == 'charging' ]]; then
+        class='charging'
+    elif (( percent <= $1 )) && (( percent > $2 )); then
         class='warning'
     elif (( percent <= $2 )); then
         class='critical'
@@ -69,16 +77,6 @@ powerctl() {
     local reboot_cmd="swaynag -t powerctl -m 'Reboot now' -B 'Yes' 'reboot'"
     local session_exit_cmd="swaynag -t powerctl -m 'Exit Wayland session' -B 'Yes' 'swaymsg exit'"
 
-    toggle_nag() {
-        pkill -f -TERM  "$(no_quotes "$1")" && exit 0
-
-        for cmd in "${@:2}"; do
-            pkill -f -TERM "$(no_quotes "$cmd")"
-        done
-
-        eval "$1"
-    }
-
     case $1 in
         'shutdown')
             toggle_nag "$shutdown_cmd" "$reboot_cmd" "$session_exit_cmd"
@@ -97,22 +95,11 @@ powerctl() {
 
 sleep 0.1
 
-case $1 in
-    'lock')
-        lock
-    ;;
-    'shoot')
-        shoot "${@:2}"
-    ;;
-    'appmenu')
-        appmenu "${@:2}"
-    ;;
-    'powergov')
-        powergov "${@:2}"
-    ;;
-    'powerctl')
-        powerctl "${@:2}"
-    ;;
-    *)
-        exit 1
-esac
+subcmds="shoot appmenu powergov powerctl"
+
+for cmd in $subcmds; do
+    [[ $1 == $cmd ]] && eval "$cmd ${@:2}" && exit 
+done
+
+echo "there is no subcommand $1"
+exit 1
