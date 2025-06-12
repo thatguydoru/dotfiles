@@ -5,7 +5,11 @@ no_quotes() {
 }
 
 get_battery_info() {
-    upower -i /org/freedesktop/UPower/devices/battery_BAT1
+    echo $(
+        upower -i $(upower -e | grep BAT) \
+        | grep $1 \
+        | awk '{ print $2 }'
+    )
 }
 
 toggle_nag() {
@@ -47,11 +51,11 @@ appmenu() {
 
 powergov() {
     local gov=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-    local percent=$(get_battery_info | grep 'percentage' | awk '{ printf int($2) }')
-    local charging=$(get_battery_info | grep 'state' | awk '{ print $2 }')
+    local percent=$(get_battery_info 'percentage' | awk '{ print int($1) }')
+    local charging=$(get_battery_info 'state')
     local class=''
 
-    if [[ $charging == 'charging' ]]; then
+    if [[ $charging == 'charging' ]] && (( percent < 100 )); then
         class='charging'
     elif (( percent <= $1 )) && (( percent > $2 )); then
         class='warning'
@@ -64,7 +68,7 @@ powergov() {
             echo -e "󰌪\n${gov^}\n${class}"
         ;;
         'performance')
-            echo -e "\n${gov^}\n${class}"
+            echo -e "\n${gov^}"
         ;;
         *)
             echo -e "$gov\n\n${class}"
