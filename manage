@@ -34,19 +34,11 @@ refresh_colors() {
     done    
 }
 
-case $1 in
-    'install')
-        install
-    ;;
-    'refresh')
-        refresh
-    ;;
-    'uninstall')
-        uninstall
-    ;;
-    'refresh-colors')
-        refresh_colors
-    ;;
-    *)
-        exit 1
-esac
+subcmds='install refresh uninstall refresh_colors'
+
+for cmd in $subcmds; do
+    [[ $1 == $cmd ]] && eval "$cmd" && exit
+done
+
+echo "$1 is not a subcommand"
+exit 1

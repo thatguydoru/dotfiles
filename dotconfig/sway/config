@@ -179,11 +179,13 @@ seat seat0 xcursor_theme capitaine-cursors 24
 bar swaybar_command waybar
 
 exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
-exec swayidle idlehint 1
+
+exec swayidle 
 exec swayidle -w \
     timeout 300 'swaylock -f' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'playerctl pause 2> /dev/null; swaylock -f'
+    before-sleep 'playerctl pause 2> /dev/null; swaylock -f' \
+    idlehint 1
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec mako
 
