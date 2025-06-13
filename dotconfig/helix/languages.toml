@@ -2,5 +2,10 @@
 name = "html"
 auto-format = false
 
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+auto-format = true
+
 [language-server.rust-analyzer.config.check]
 command = "clippy"

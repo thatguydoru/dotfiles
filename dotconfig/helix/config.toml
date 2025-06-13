@@ -9,13 +9,24 @@ color-modes = true
 end-of-line-diagnostics = "hint"
 popup-border = "all"
 
+[editor.statusline]
+left = [
+    "mode", "spinner", "file-name",
+    "separator", "spacer", "version-control", "spacer",
+    "read-only-indicator", "file-modification-indicator"
+]
+right = ["diagnostics", "selections", "register", "position", "file-encoding", ]
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.indent-guides]
+render = true
+
 [editor.inline-diagnostics]
-cursor-line = "hint"
+cursor-line = "warning"
 
 [keys.normal."@"]
 m = ":pipe sed 's/[ \t]*$//g'"
