@@ -4,7 +4,6 @@
   font-family: Jetbrains Mono Medium, Roboto, sans-serif;
   font-size: 12px;
   border-radius: 0;
-  transition: background-color 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #waybar {
@@ -13,15 +12,7 @@
 }
 
 #waybar>* {
-  margin-top: 6px;
-}
-
-.modules-left {
-  margin-left: 4px;
-}
-
-.modules-right {
-  margin-right: 4px;
+  margin: 6px 4px 0 4px;
 }
 
 button,
@@ -29,9 +20,9 @@ label.module,
 #tray {
   text-shadow: none;
   border: none;
-  padding: 0 4px;
+  padding: 2px 4px;
   transition:
-    padding 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
+    padding 0.25s linear,
     background-color 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -62,6 +53,7 @@ button:not(.focused):hover {
   color: @base07;
 }
 
+#mode,
 #workspaces button.urgent {
   background: @base0F;
 }

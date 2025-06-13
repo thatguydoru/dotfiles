@@ -3,7 +3,7 @@
     "position": "bottom",
     "spacing": 4,
     "height": 25,
-    "reload_style_on_change": false, // only true when changing styles
+    "reload_style_on_change": true, // only true when changing styles
     "modules-left": [
         "custom/appmenu",
         "backlight",
@@ -25,6 +25,7 @@
         "group/powerctl"
     ],
     "sway/mode": {
+        "format": "<small>{}</small>",
         "tooltip": false
     },
     "sway/scratchpad": {
