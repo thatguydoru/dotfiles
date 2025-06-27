@@ -22,7 +22,7 @@ label.module,
   border: none;
   padding: 2px 4px;
   transition:
-    padding 0.25s linear,
+    padding 0.05s linear,
     background-color 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -58,6 +58,9 @@ button:not(.focused):hover {
   background: @base0F;
 }
 
+#custom-add-workspace,
+#network.disconnected,
+#network.disabled,
 #custom-appmenu,
 #idle_inhibitor,
 #workspaces button,

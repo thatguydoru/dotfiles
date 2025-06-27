@@ -7,9 +7,13 @@ border-size=2
 max-visible=10
 padding=10
 group-by=expiring,app-name,urgency,summary,body
+on-touch=invoke-default-action
 
 [urgency=high]
 border-color=#fb4934
 
 [urgency=normal]
 border-color=#83a598
+
+[app-name="blueman" summary~="^Pairing\ request" actionable]
+on-button-left=invoke-action confirm

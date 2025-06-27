@@ -6,13 +6,13 @@ line-number = "relative"
 true-color = true
 auto-completion = false
 color-modes = true
-end-of-line-diagnostics = "hint"
-popup-border = "all"
+end-of-line-diagnostics = "disable"
+popup-border = "menu"
 
 [editor.statusline]
 left = [
     "mode", "spinner", "file-name",
-    "separator", "spacer", "version-control", "spacer",
+    "spacer", "version-control", "spacer",
     "read-only-indicator", "file-modification-indicator"
 ]
 right = ["diagnostics", "selections", "register", "position", "file-encoding", ]
@@ -26,7 +26,7 @@ select = "underline"
 render = true
 
 [editor.inline-diagnostics]
-cursor-line = "warning"
+cursor-line = "hint"
 
 [keys.normal."@"]
 m = ":pipe sed 's/[ \t]*$//g'"

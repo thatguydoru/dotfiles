@@ -12,16 +12,6 @@ get_battery_info() {
     )
 }
 
-toggle_nag() {
-    pkill -f -TERM  "$(no_quotes "$1")" && exit 0
-
-    for cmd in "${@:2}"; do
-        pkill -f -TERM "$(no_quotes "$cmd")"
-    done
-
-    eval "$1"
-}
-
 # -----------------------------------------------------------------------------
 # Main sub commands
 # -----------------------------------------------------------------------------
@@ -77,19 +67,17 @@ powergov() {
 }
 
 powerctl() {
-    local shutdown_cmd="swaynag -t powerctl -m 'Shutdown now' -B 'Yes' 'shutdown now'"
-    local reboot_cmd="swaynag -t powerctl -m 'Reboot now' -B 'Yes' 'reboot'"
-    local session_exit_cmd="swaynag -t powerctl -m 'Exit Wayland session' -B 'Yes' 'swaymsg exit'"
+    killall swaynag
 
     case $1 in
         'shutdown')
-            toggle_nag "$shutdown_cmd" "$reboot_cmd" "$session_exit_cmd"
+            swaynag -t powerctl -m 'Shutdown now' -B 'Yes' 'shutdown now'
         ;;
         'reboot')
-            toggle_nag "$reboot_cmd" "$shutdown_cmd" "$session_exit_cmd"
+            swaynag -t powerctl -m 'Reboot now' -B 'Yes' 'reboot'
         ;;
         'session-exit')
-            toggle_nag "$session_exit_cmd" "$shutdown_cmd" "$reboot_cmd"
+            swaynag -t powerctl -m 'Exit Wayland session' -B 'Yes' 'swaymsg exit'
         ;;
         'lock')
             lock
@@ -97,9 +85,13 @@ powerctl() {
     esac
 }
 
+add_workspace() {
+    swaymsg "workspace $(swaymsg -rt get_workspaces | jq '(.|length)+1')"
+}
+
 sleep 0.1
 
-subcmds="shoot appmenu powergov powerctl"
+subcmds="shoot appmenu powergov powerctl add_workspace"
 
 for cmd in $subcmds; do
     [[ $1 == $cmd ]] && eval "$cmd ${@:2}" && exit 

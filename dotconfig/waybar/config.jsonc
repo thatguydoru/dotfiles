@@ -3,7 +3,7 @@
     "position": "bottom",
     "spacing": 4,
     "height": 25,
-    "reload_style_on_change": true, // only true when changing styles
+    "reload_style_on_change": false, // only true when changing styles
     "modules-left": [
         "custom/appmenu",
         "backlight",
@@ -16,7 +16,8 @@
     "modules-center": [
         "sway/mode",
         "sway/scratchpad",
-        "sway/workspaces"
+        "sway/workspaces",
+        "custom/add-workspace"
     ],
     "modules-right": [
         "group/hardware",
@@ -41,7 +42,7 @@
         "format-disconnected": "󰲛",
         "tooltip-format-wifi": "{bandwidthDownBits}  {bandwidthUpBits}  ",
         "tooltip-format-ethernet": "{bandwidthDownBits}  {bandwidthUpBits}  ",
-        "tooltip-disconnected": "Net disconnected",
+        "tooltip-format-disconnected": "Disconnected from network",
         "interval": 20
     },
     "idle_inhibitor": {
@@ -55,8 +56,8 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
+        "tooltip-format": "Backlight",
         "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-        "tooltip": false
     },
     "pulseaudio#sink": {
         "format": "{volume}% {icon}",
@@ -157,5 +158,10 @@
         "format": "󰍜",
         "tooltip-format": "Apps",
         "on-click": "~/.local/bin/kript appmenu"
+    },
+    "custom/add-workspace": {
+        "format": "<span><b>+</b></span>",
+        "tooltip-format": "Add Workspace",
+        "on-click": "~/.local/bin/kript add_workspace"
     }
 }
