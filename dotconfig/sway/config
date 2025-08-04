@@ -7,6 +7,7 @@ set $up k
 set $right l
 set $term wezterm
 set $menu ~/.local/bin/kript appmenu
+set $lock ~/.local/bin/kript powerctl lock
 set $background ~/.config/sway/glade.png
 set $sound_step 1
 set $bright_step 1
@@ -166,7 +167,7 @@ bindsym --locked Print exec $shotcmd $shot_output_name
 bindsym --locked Ctrl+F10 exec $shotcmd $shot_output_name
 bindsym --locked $mod+Shift+s exec $shotcmd $shot_output_name select
 
-bindsym $mod+Alt+l exec 'swaylock -f'
+bindsym $mod+Alt+l exec $lock
 
 client.focused           $base0C $base02 $base07 $base0E $base0C
 client.focused_inactive  $base02 $base00 $base07 $base03 $base03
@@ -182,9 +183,9 @@ exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
 
 exec swayidle 
 exec swayidle -w \
-    timeout 300 'swaylock -f' \
+    timeout 300 '$lock' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'playerctl pause 2> /dev/null; swaylock -f' \
+    before-sleep '$lock' \
     idlehint 1
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec mako

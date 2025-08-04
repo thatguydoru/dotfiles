@@ -1,9 +1,5 @@
 #! /usr/bin/bash
  
-no_quotes() {
-    echo $(echo -n $1 | sed "s/'//g")
-}
-
 get_battery_info() {
     echo $(
         upower -i $(upower -e | grep BAT) \
@@ -64,6 +60,13 @@ powergov() {
             echo -e "$gov\n\n${class}"
         ;;
     esac
+}
+
+lock() {
+    if [[ -z $(pgrep swaylock) ]]; then
+        playerctl pause 2> /dev/null
+        swaylock
+    fi
 }
 
 powerctl() {
