@@ -8,6 +8,7 @@ auto-completion = false
 color-modes = true
 end-of-line-diagnostics = "disable"
 popup-border = "menu"
+trim-trailing-whitespace = true
 
 [editor.statusline]
 left = [
@@ -27,6 +28,3 @@ render = true
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
-
-[keys.normal."@"]
-m = ":pipe sed 's/[ \t]*$//g'"

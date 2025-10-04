@@ -11,9 +11,8 @@
 }
 
 #outer-box {
-  padding: 0 10px;
+  padding: 10px;
   border: 2px solid @base07;
-  border-bottom: none;
   background: @base00;
 }
 

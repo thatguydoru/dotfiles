@@ -32,7 +32,7 @@ shoot() {
 
 appmenu() {
     pkill wofi && exit 0
-    wofi -i -I -l 7 -w 25% -p 'App name...' --show=drun
+    wofi -i -I -w 25% -p 'App name...' --show=drun
 }
 
 powergov() {
@@ -63,10 +63,8 @@ powergov() {
 }
 
 lock() {
-    if [[ -z $(pgrep swaylock) ]]; then
-        playerctl pause 2> /dev/null
-        swaylock
-    fi
+    playerctl pause 2> /dev/null
+    swaylock
 }
 
 powerctl() {

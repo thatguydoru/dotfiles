@@ -2,7 +2,7 @@
 {
     "position": "bottom",
     "spacing": 4,
-    "height": 25,
+    "height": 28,
     "reload_style_on_change": false,
     "modules-left": [
         "custom/appmenu",
